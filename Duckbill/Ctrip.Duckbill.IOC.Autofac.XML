@@ -1,0 +1,289 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ctrip.Duckbill.IOC.Autofac</name>
+    </assembly>
+    <members>
+        <member name="T:Ctrip.Duckbill.IOC.Autofac.IAutofacServicesRegister">
+            <summary>
+            Autofac services register.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.IAutofacServicesRegister.Register(Autofac.ContainerBuilder,System.Collections.Generic.IEnumerable{Ctrip.Duckbill.IOC.IServiceDefinition})">
+            <summary>
+            Register services to container builder.
+            </summary>
+            <param name="builder">Container builder.</param>
+            <param name="services">Services definition.</param>
+        </member>
+        <member name="T:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesContainer">
+            <summary>
+            Autofac service container.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesContainer.mainBuilder">
+            <summary>
+            Main container builder.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesContainer.mainContainer">
+            <summary>
+            Main container.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesContainer.#ctor(Ctrip.Duckbill.IOC.IServicesDefinitionContainer)">
+            <summary>
+            Initializes a new instance of the AutofacServicesContainer class.
+            </summary>
+            <param name="servicesDefinitionContainer">
+            Services definition container.
+            </param>
+        </member>
+        <member name="P:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesContainer.Priority">
+            <summary>
+            Gets priority for which implement will be used. The larger the number, the more priority. 
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesContainer.ContainService(System.Type)">
+            <summary>
+            Check whether the service has been registered in service locator.
+            </summary>
+            <param name="serviceType">Service type.</param>
+            <returns>True if the service has been registered; otherwise false.</returns>
+            <exception cref="T:System.ArgumentNullException">Service type.</exception>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesContainer.ContainService``1">
+            <summary>
+            Check whether the service has been registered in service locator.
+            </summary>
+            <typeparam name="TService">Type of service.</typeparam>
+            <returns>True if the service has been registered; otherwise false.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesContainer.ContainService(System.Type,System.String)">
+            <summary>
+            Check whether the service has been registered in service locator.
+            </summary>
+            <param name="serviceType">Service type.</param>
+            <param name="subKey">Sub key.</param>
+            <returns>True if the service has been registered; otherwise false.</returns>
+            <exception cref="T:System.ArgumentNullException">Service type.</exception>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesContainer.ContainService``1(System.String)">
+            <summary>
+            Check whether the service has been registered in service locator.
+            </summary>
+            <typeparam name="TService">Type of service.</typeparam>
+            <param name="subKey">Sub key.</param>
+            <returns>True if the service has been registered; otherwise false.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesContainer.Resolve``1">
+            <summary>
+            Resolve Service Implementation.
+            </summary>
+            <typeparam name="TService">Service type.</typeparam>
+            <returns>Service Implementation object.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesContainer.ResolveAll``1">
+            <summary>
+            Resolve all Service Implementations.
+            </summary>
+            <typeparam name="TService">Service type.</typeparam>
+            <returns>Service Implementation object.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesContainer.Resolve``1(System.String)">
+            <summary>
+            Resolve Service Implementation.
+            </summary>
+            <typeparam name="TService">Servie type.</typeparam>
+            <param name="subKey">Sub key.</param>
+            <returns>Service Implementation Instance.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesContainer.GetInstance``1">
+            <summary>
+            Get an instance of the given TService.
+            </summary>
+            <typeparam name="TService">Type of service requested.</typeparam>
+            <returns>The requested service instance.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesContainer.GetService(System.Type,System.String)">
+            <summary>
+            Gets the service object of the specified type and key.
+            </summary>
+            <param name="serviceType">An object that specifies the type of service object to get.</param>
+            <param name="subKey">Sub key.</param>
+            <returns>A service object of type serviceType.-or- null if there is no service object of type serviceType.</returns>
+            <exception cref="T:System.ArgumentNullException">Service type.</exception>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesContainer.GetService(System.Type)">
+            <summary>
+            Gets the service object of the specified type.
+            </summary>
+            <param name="serviceType">An object that specifies the type of service object to get.</param>
+            <returns>A service object of type serviceType.-or- null if there is no service object of type serviceType.</returns>
+            <exception cref="T:System.ArgumentNullException">Service type.</exception>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesContainer.GetAllServices(System.Type)">
+            <summary>
+            Gets the service object collection of the specified type.
+            </summary>
+            <param name="serviceType">An object that specifies the type of service object to get.</param>
+            <returns>A service object collection of type serviceType.-or- null if there is no service object of type serviceType.</returns>
+            <exception cref="T:System.ArgumentNullException">Service type.</exception>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesContainer.CreateScope">
+            <summary>
+            Create service scope.
+            </summary>
+            <returns>Serivce scope instance.</returns>
+        </member>
+        <member name="T:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesScope">
+            <summary>
+            Autofac service scope.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesScope.lifetimeScope">
+            <summary>
+            Current lifetime Scope.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesScope.#ctor(Autofac.ILifetimeScope)">
+            <summary>
+            Initializes a new instance of the AutofacServicesScope class.
+            </summary>
+            <param name="lifetime">Autofac life time scope interface.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesScope.ContainService(System.Type)">
+            <summary>
+            Check whether the service has been registered in service locator.
+            </summary>
+            <param name="serviceType">Service type.</param>
+            <returns>True if the service has been registered; otherwise false.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesScope.ContainService``1">
+            <summary>
+            Check whether the service has been registered in service locator.
+            </summary>
+            <typeparam name="TService">Type of service.</typeparam>
+            <returns>True if the service has been registered; otherwise false.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesScope.ContainService(System.Type,System.String)">
+            <summary>
+            Check whether the service has been registered in service locator.
+            </summary>
+            <param name="serviceType">Service type.</param>
+            <param name="subKey">Sub key.</param>
+            <returns>True if the service has been registered; otherwise false.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesScope.ContainService``1(System.String)">
+            <summary>
+            Check whether the service has been registered in service locator.
+            </summary>
+            <typeparam name="TService">Type of service.</typeparam>
+            <param name="subKey">Sub key.</param>
+            <returns>True if the service has been registered; otherwise false.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesScope.Resolve``1">
+            <summary>
+            Resolve Service Implementation.
+            </summary>
+            <typeparam name="TService">Servie type.</typeparam>
+            <returns>Service Implementation object.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesScope.ResolveAll``1">
+            <summary>
+            Resolve all Service Implementations.
+            </summary>
+            <typeparam name="TService">Service type.</typeparam>
+            <returns>Service Implementation object.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesScope.Resolve``1(System.String)">
+            <summary>
+            Resolve Service Implementation.
+            </summary>
+            <typeparam name="TService">Service type.</typeparam>
+            <param name="subKey">Sub key.</param>
+            <returns>Service Implementation Instance.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesScope.GetService(System.Type,System.String)">
+            <summary>
+            Gets the service object of the specified type and key.
+            </summary>
+            <param name="serviceType">An object that specifies the type of service object to get.</param>
+            <param name="subKey">Sub key.</param>
+            <returns>A service object of type serviceType.-or- null if there is no service object of type serviceType.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesScope.GetService(System.Type)">
+            <summary>
+            Gets the service object of the specified type.
+            </summary>
+            <param name="serviceType">An object that specifies the type of service object to get.</param>
+            <returns>A service object of type serviceType.-or- null if there is no service object of type serviceType.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesScope.GetAllServices(System.Type)">
+            <summary>
+            Gets the service object collection of the specified type.
+            </summary>
+            <param name="serviceType">An object that specifies the type of service object to get.</param>
+            <returns>A service object collection of type serviceType.-or- null if there is no service object of type serviceType.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesScope.GetInstance``1">
+            <summary>
+            Get an instance of the given TService.
+            </summary>
+            <typeparam name="TService">Type of service requested.</typeparam>
+            <returns>The requested service instance.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.AutofacServicesScope.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>   
+        </member>
+        <member name="T:Ctrip.Duckbill.IOC.Autofac.Implement.DefaultAutofacServicesRegister">
+            <summary>
+            Autofac services register.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.DefaultAutofacServicesRegister.Register(Autofac.ContainerBuilder,System.Collections.Generic.IEnumerable{Ctrip.Duckbill.IOC.IServiceDefinition})">
+            <summary>
+            Register services to container builder.
+            </summary>
+            <param name="builder">Container builder.</param>
+            <param name="services">Services definition.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.DefaultAutofacServicesRegister.RegisterServiceToBuilder(Autofac.ContainerBuilder,Ctrip.Duckbill.IOC.IServiceDefinition)">
+            <summary>
+            Register service to builder.
+            </summary>
+            <param name="builder">Container builder.</param>
+            <param name="service">Service definition.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.DefaultAutofacServicesRegister.RegisterServiceWithImplementToBuilder(Autofac.ContainerBuilder,Ctrip.Duckbill.IOC.IServiceDefinition)">
+            <summary>
+            Register service with service implement type to builder.
+            </summary>
+            <param name="builder">Container builder.</param>
+            <param name="service">Service definition.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.DefaultAutofacServicesRegister.RegisterServiceWithImplementWithSubKeyToBuilder(Autofac.ContainerBuilder,Ctrip.Duckbill.IOC.IServiceDefinition)">
+            <summary>
+            Register service with service implement type with subkey to builder.
+            </summary>
+            <param name="builder">Container builder.</param>
+            <param name="service">Service definition.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.DefaultAutofacServicesRegister.RegisterServiceWithFactoryToBuilder(Autofac.ContainerBuilder,Ctrip.Duckbill.IOC.IServiceDefinition)">
+            <summary>
+            Register service with service factory to builder.
+            </summary>
+            <param name="builder">Container builder.</param>
+            <param name="service">Service definition.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.IOC.Autofac.Implement.DefaultAutofacServicesRegister.RegisterServiceWithFactoryWithSubkeyToBuilder(Autofac.ContainerBuilder,Ctrip.Duckbill.IOC.IServiceDefinition)">
+            <summary>
+            Register service with service factory with subkey to builder.
+            </summary>
+            <param name="builder">Container builder.</param>
+            <param name="service">Service definition.</param>
+        </member>
+    </members>
+</doc>

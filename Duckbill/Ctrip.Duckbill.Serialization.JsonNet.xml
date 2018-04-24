@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ctrip.Duckbill.Serialization.JsonNet</name>
+    </assembly>
+    <members>
+        <member name="T:Ctrip.Duckbill.Serialization.JsonNet.IJsonNetJsonSerializer">
+            <summary>
+            Json net json serializer interface.
+            </summary>
+        </member>
+        <member name="T:Ctrip.Duckbill.Serialization.JsonNet.JsonContractResolver">
+            <summary>
+            Default Contract resolver for JsonMediaTypeFormatter. Uses the IRequiredMemberSelector to choose required members.
+            </summary> 
+        </member>
+        <member name="M:Ctrip.Duckbill.Serialization.JsonNet.JsonContractResolver.#ctor">
+            <summary>
+            Initializes a new instance of the JsonContractResolver class.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Serialization.JsonNet.JsonContractResolver.CreateProperty(System.Reflection.MemberInfo,Newtonsoft.Json.MemberSerialization)">
+            <summary>
+            Create json property.
+            </summary>
+            <param name="member">Member information.</param>
+            <param name="memberSerialization">Member serializtion information.</param>
+            <returns>Json property.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Serialization.JsonNet.JsonContractResolver.ConfigureProperty(System.Reflection.MemberInfo,Newtonsoft.Json.Serialization.JsonProperty)">
+            <summary>
+            Determines whether a member is required or not and sets the appropriate JsonProperty settings.
+            </summary>
+            <param name="member">Member information.</param>
+            <param name="property">Json property information.</param>
+        </member>
+        <member name="T:Ctrip.Duckbill.Serialization.JsonNet.JsonNetJsonSerializer">
+            <summary>
+            JsonNet json serializer.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Serialization.JsonNet.JsonNetJsonSerializer.streamUtility">
+            <summary>
+            The stream utility.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Serialization.JsonNet.JsonNetJsonSerializer.mySettings">
+            <summary>
+            Json serializer settings filed.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Serialization.JsonNet.JsonNetJsonSerializer.myEncoding">
+            <summary>
+            Json serializer encoding field.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Serialization.JsonNet.JsonNetJsonSerializer.#ctor(Ctrip.Duckbill.IO.IStreamUtility)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ctrip.Duckbill.Serialization.JsonNet.JsonNetJsonSerializer"/> class.
+            </summary>
+            <param name="streamUtility">The stream utility.</param>
+        </member>
+        <member name="P:Ctrip.Duckbill.Serialization.JsonNet.JsonNetJsonSerializer.Encoding">
+            <summary>
+            Gets or sets the type of text encoding to use.
+            </summary>
+        </member>
+        <member name="P:Ctrip.Duckbill.Serialization.JsonNet.JsonNetJsonSerializer.Base64">
+            <summary>
+            Gets or sets a value indicating whether to base 64 encoding the text.
+            </summary>
+        </member>
+        <member name="P:Ctrip.Duckbill.Serialization.JsonNet.JsonNetJsonSerializer.Setting">
+            <summary>
+            Gets or sets the json serializer settings.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Serialization.JsonNet.JsonNetJsonSerializer.SerializeToStream(System.IO.Stream@,System.Object)">
+            <summary>
+            Serialize object to stream.
+            </summary>
+            <param name="stream">Object stream.</param>
+            <param name="obj">Requested object.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Serialization.JsonNet.JsonNetJsonSerializer.DeserializeFromStream(System.IO.Stream,System.Type,System.Object@)">
+            <summary>
+            Deserialize object from stream.
+            </summary>
+            <param name="stream">Stream which contained object.</param>
+            <param name="type">Object type.</param>
+            <param name="obj">Recovered object.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Serialization.JsonNet.JsonNetJsonSerializer.SerializeObjectToBytes(System.Object)">
+            <summary>
+            Serialize object to bytes.
+            </summary>
+            <param name="obj">Requested object.</param>
+            <returns>Bytes array.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Serialization.JsonNet.JsonNetJsonSerializer.DeserializeObjectFromBytes(System.Byte[],System.Type)">
+            <summary>
+            Deserialize object from bytes.
+            </summary>
+            <param name="bytes">Requested bytes.</param>
+            <param name="type">Object type.</param>
+            <returns>Object instance.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Serialization.JsonNet.JsonNetJsonSerializer.SerializeToBytes``1(``0)">
+            <summary>
+            Serialize object to bytes.
+            </summary>
+            <typeparam name="T">Type of object.</typeparam>
+            <param name="obj">Requested object.</param>
+            <returns>Bytes array.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Serialization.JsonNet.JsonNetJsonSerializer.DeserializeFromBytes``1(System.Byte[])">
+            <summary>
+            Deserialize object from bytes.
+            </summary>
+            <typeparam name="T">Type of object.</typeparam>
+            <param name="bytes">Requested bytes.</param>
+            <returns>Object instance.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Serialization.JsonNet.JsonNetJsonSerializer.SerializeObjectToText(System.Object)">
+            <summary>
+            Serialize object to text.
+            </summary>
+            <param name="obj">Requested object.</param>
+            <returns>Text content.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Serialization.JsonNet.JsonNetJsonSerializer.DeserializeObjectFromText(System.String,System.Type)">
+            <summary>
+            Deserialize object from text.
+            </summary>
+            <param name="value">Text content.</param>
+            <param name="type">Object type.</param>
+            <returns>Object instance.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Serialization.JsonNet.JsonNetJsonSerializer.SerializeToText``1(``0)">
+            <summary>
+            Serialize object to text.
+            </summary>
+            <typeparam name="T">Type of object.</typeparam>
+            <param name="obj">Requested object.</param>
+            <returns>Text content.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Serialization.JsonNet.JsonNetJsonSerializer.DeserializeFromText``1(System.String)">
+            <summary>
+            Deserialize object from text.
+            </summary>
+            <typeparam name="T">Type of object.</typeparam>
+            <param name="value">Requested bytes.</param>
+            <returns>Text content.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Serialization.JsonNet.JsonNetJsonSerializer.SerializeObjectToJson(System.Object)">
+            <summary>
+            Serialize object to json.
+            </summary>
+            <param name="obj">Requested object.</param>
+            <returns>Json content.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Serialization.JsonNet.JsonNetJsonSerializer.DeserializeObjectFromJson(System.String,System.Type)">
+            <summary>
+            Deserialize object from json.
+            </summary>
+            <param name="value">Json content.</param>
+            <param name="type">Object type.</param>
+            <returns>Object instance.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Serialization.JsonNet.JsonNetJsonSerializer.SerializeToJson``1(``0)">
+            <summary>
+            Serialize object to json.
+            </summary>
+            <typeparam name="T">Type of object.</typeparam>
+            <param name="obj">Requested object.</param>
+            <returns>Json content.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Serialization.JsonNet.JsonNetJsonSerializer.DeserializeFromJson``1(System.String)">
+            <summary>
+            Deserialize object from json.
+            </summary>
+            <typeparam name="T">Type of object.</typeparam>
+            <param name="value">Json content.</param>
+            <returns>Object instance.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Serialization.JsonNet.JsonNetJsonSerializer.CreateDefaultSerializerSettings">
+            <summary>
+            Creates a <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/> instance with the default settings..
+            </summary>
+            <returns>Default json serializer settings.</returns>
+        </member>
+    </members>
+</doc>

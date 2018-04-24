@@ -1,0 +1,1432 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ctrip.Duckbill.Net.Http</name>
+    </assembly>
+    <members>
+        <member name="T:Ctrip.Duckbill.Net.Http.Formating.DefaultContentTypeSerializerRepository">
+            <summary>
+            Default content type serializer repository.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.DefaultContentTypeSerializerRepository.GetSerializer(System.String)">
+            <summary>
+            Get serializer.
+            </summary>
+            <param name="contentType">Content type.</param>
+            <returns>Serializer instance.</returns>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.Formating.DefaultMediaTypeFormattersRepository">
+            <summary>
+            Default media type formatter repository.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.DefaultMediaTypeFormattersRepository.formatters">
+            <summary>
+            The formatters.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.DefaultMediaTypeFormattersRepository.#ctor(Ctrip.Duckbill.ICurrentAppDomain,Ctrip.Duckbill.Reflection.IAssemblyTypeLoader,Ctrip.Duckbill.Reflection.IActivator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ctrip.Duckbill.Net.Http.Formating.DefaultMediaTypeFormattersRepository"/> class.
+            </summary>
+            <param name="currentAppDomain">The current application domain.</param>
+            <param name="assemblyTypeLoader">The assembly type loader.</param>
+            <param name="activator">The activator.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.DefaultMediaTypeFormattersRepository.GetFormatters">
+            <summary>
+            Get media type formatter.
+            </summary>
+            <returns>Media type formatters.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.DefaultMediaTypeFormattersRepository.IsBufferedMediaTypeFormatter(System.Type)">
+            <summary>
+            Check whether type is an instance services module..
+            </summary>
+            <param name="type">Current type.</param>
+            <returns>True is an instance services module. False is not.</returns>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.Formating.GsonFormatter">
+            <summary>
+            Google protocal buffer media type formatter.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.GsonFormatter.protobufSerializer">
+            <summary>
+            Protocal buffer serializer.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.GsonFormatter.#ctor">
+            <summary>
+            Initializes a new instance of the GsonFormatter class.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.GsonFormatter.CanReadType(System.Type)">
+            <summary>
+            Queries whether this System.Net.Http.Formatting.MediaTypeFormatter can deserializean object of the specified type.
+            </summary>
+            <param name="type">The type to deserialize.</param>
+            <returns>True if the System.Net.Http.Formatting.MediaTypeFormatter can deserialize the type; otherwise, false.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.GsonFormatter.CanWriteType(System.Type)">
+            <summary>
+            Queries whether this System.Net.Http.Formatting.MediaTypeFormatter can serializean object of the specified type.
+            </summary>
+            <param name="type">The type to serialize.</param>
+            <returns>true if the System.Net.Http.Formatting.MediaTypeFormatter can serialize the type; otherwise, false.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.GsonFormatter.WriteToStream(System.Type,System.Object,System.IO.Stream,System.Net.Http.HttpContent)">
+            <summary>
+            Writes synchronously to the buffered stream.
+            </summary>
+            <remarks>
+            An implementation of this method should close <paramref name="writeStream"/> upon completion.
+            </remarks>
+            <param name="type">The type of the object to write.</param>
+            <param name="value">The object value to write.  It may be <c>null</c>.</param>
+            <param name="writeStream">The <see cref="T:System.IO.Stream"/> to which to write.</param>
+            <param name="content">The <see cref="T:System.Net.Http.HttpContent"/> if available. Note that modifying the headers of the content will have no effect on the generated HTTP message; they should only be used to guide the writing.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.GsonFormatter.ReadFromStream(System.Type,System.IO.Stream,System.Net.Http.HttpContent,System.Net.Http.Formatting.IFormatterLogger)">
+            <summary>
+            Reads synchronously from the buffered stream.
+            </summary>
+            <remarks>
+            An implementation of this method should close <paramref name="readStream"/> upon completion.
+            </remarks>
+            <param name="type">The type of the object to deserialize.</param>
+            <param name="readStream">The <see cref="T:System.IO.Stream"/> to read.</param>
+            <param name="content">The <see cref="T:System.Net.Http.HttpContent"/> if available.</param>
+            <param name="formatterLogger">The <see cref="T:System.Net.Http.Formatting.IFormatterLogger"/> to log events to.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.Formating.IContentTypeSerializerRepository">
+            <summary>
+            Content type serializer repository.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.IContentTypeSerializerRepository.GetSerializer(System.String)">
+            <summary>
+            Get serializer.
+            </summary>
+            <param name="contentType">Content type.</param>
+            <returns>Serializer instance.</returns>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.Formating.IMediaTypeFormattersRepository">
+            <summary>
+            Media type repository.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.IMediaTypeFormattersRepository.GetFormatters">
+            <summary>
+            Get media type formatter.
+            </summary>
+            <returns>Media type formatters.</returns>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.Formating.IMediaTypeWithQualityHeaderValueComparer">
+            <summary>
+            Media type with quality header value comparer.
+            </summary>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultContentNegotiator">
+            <summary>
+            Class that selects a <see cref="T:System.Net.Http.Formatting.MediaTypeFormatter"/> for an <see cref="T:System.Net.Http.HttpRequestMessage"/>
+            or <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultContentNegotiator.Match">
+            <summary>
+            Quality factor to indicate a perfect match.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultContentNegotiator.NoMatch">
+            <summary>
+            Quality factor to indicate no match.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultContentNegotiator.stringQualityHeaderComparer">
+            <summary>
+            Quality header comparer.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultContentNegotiator.mediaTypeQualityHeaderComparer">
+            <summary>
+            Media type quality header comparer.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultContentNegotiator.#ctor(Ctrip.Duckbill.Net.Http.Formating.IStringWithQualityHeaderValueComparer,Ctrip.Duckbill.Net.Http.Formating.IMediaTypeWithQualityHeaderValueComparer)">
+            <summary>
+            Initializes a new instance of the DefaultContentNegotiator class.
+            </summary>
+            <param name="qualityHeaderComparer">String quality header comparer.</param>
+            <param name="mediaTypeQualityHeaderComparer">Media type quality header comparer.</param>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultContentNegotiator.ExcludeMatchOnTypeOnly">
+            <summary>
+            Gets a value indicating whether it match on type only which means that we return null if we can't match on anything in the request. This is useful for generating 406 (Not Acceptable) status codes.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultContentNegotiator.Negotiate(System.Type,System.Net.Http.HttpRequestMessage,System.Collections.Generic.IEnumerable{System.Net.Http.Formatting.MediaTypeFormatter})">
+            <summary>
+            Performs content negotiating by selecting the most appropriate <see cref="T:System.Net.Http.Formatting.MediaTypeFormatter"/> out of the passed in
+            <paramref name="formatters"/> for the given <paramref name="request"/> that can serialize an object of the given
+            <paramref name="type"/>.
+            </summary>
+            <param name="type">The type to be serialized.</param>
+            <param name="request">The request.</param>
+            <param name="formatters">The set of <see cref="T:System.Net.Http.Formatting.MediaTypeFormatter"/> objects from which to choose.</param>
+            <returns>The result of the negotiation containing the most appropriate <see cref="T:System.Net.Http.Formatting.MediaTypeFormatter"/> instance,
+            or <c>null</c> if there is no appropriate formatter.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultContentNegotiator.ComputeFormatterMatches(System.Type,System.Net.Http.HttpRequestMessage,System.Collections.Generic.IEnumerable{System.Net.Http.Formatting.MediaTypeFormatter})">
+            <summary>
+            Determine how well each formatter matches by associating a <see cref="T:System.Net.Http.Formatting.MediaTypeFormatterMatchRanking"/> value
+            with the formatter. Then associate the quality of the match based on q-factors and other parameters. The result of this 
+            method is a collection of the matches found categorized and assigned a quality value.
+            </summary>
+            <param name="type">The type to be serialized.</param>
+            <param name="request">The request.</param>
+            <param name="formatters">The set of <see cref="T:System.Net.Http.Formatting.MediaTypeFormatter"/> objects from which to choose.</param>
+            <returns>A collection containing all the matches.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultContentNegotiator.SelectResponseMediaTypeFormatter(System.Collections.Generic.ICollection{System.Net.Http.Formatting.MediaTypeFormatterMatch})">
+            <summary>
+            Select the best match among the candidate matches found.
+            </summary>
+            <param name="matches">The collection of matches.</param>
+            <returns>The <see cref="T:System.Net.Http.Formatting.MediaTypeFormatterMatch"/> determined to be the best match.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultContentNegotiator.SelectResponseCharacterEncoding(System.Net.Http.HttpRequestMessage,System.Net.Http.Formatting.MediaTypeFormatter)">
+            <summary>
+            Determine the best character encoding for writing the response. First we look
+            for accept-charset headers and if not found then we try to match
+            any charset encoding in the request (in case of PUT, POST, etc.)
+            If no encoding is found then we use the default for the formatter.
+            </summary>
+            <param name="request">Http request message.</param>
+            <param name="formatter">Media type formater.</param>
+            <returns>The <see cref="T:System.Text.Encoding"/> determined to be the best match.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultContentNegotiator.MatchMediaTypeMapping(System.Net.Http.HttpRequestMessage,System.Net.Http.Formatting.MediaTypeFormatter)">
+            <summary>
+            Match a request against the <see cref="T:System.Net.Http.Formatting.MediaTypeMapping"/>s registered with the formatter.
+            </summary>
+            <param name="request">The request to match.</param>
+            <param name="formatter">The formatter to match against.</param>
+            <returns>A <see cref="T:System.Net.Http.Formatting.MediaTypeFormatterMatch"/> indicating the quality of the match or null is no match.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultContentNegotiator.MatchAcceptHeader(System.Collections.Generic.IEnumerable{System.Net.Http.Headers.MediaTypeWithQualityHeaderValue},System.Net.Http.Formatting.MediaTypeFormatter)">
+            <summary>
+            Match the request accept header field values against the formatter's registered supported media types.
+            </summary>
+            <param name="sortedAcceptValues">The sorted accept header values to match.</param>
+            <param name="formatter">The formatter to match against.</param>
+            <returns>A <see cref="T:System.Net.Http.Formatting.MediaTypeFormatterMatch"/> indicating the quality of the match or null is no match.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultContentNegotiator.MatchRequestMediaType(System.Net.Http.HttpRequestMessage,System.Net.Http.Formatting.MediaTypeFormatter)">
+            <summary>
+            Match any request media type (in case there is a request entity body) against the formatter's registered
+            media types.
+            </summary>
+            <param name="request">The request to match.</param>
+            <param name="formatter">The formatter to match against.</param>
+            <returns>A <see cref="T:System.Net.Http.Formatting.MediaTypeFormatterMatch"/> indicating the quality of the match or null is no match.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultContentNegotiator.MatchType(System.Type,System.Net.Http.Formatting.MediaTypeFormatter)">
+            <summary>
+            Pick the first supported media type and indicate we've matched only on type
+            If ExcludeMatchOnTypeOnly is true then we don't match on type only which means
+            that we return null if we can't match on anything in the request. This is useful
+            for generating 406 (Not Acceptable) status codes.
+            </summary>
+            <param name="type">The type to be serialized.</param>
+            <param name="formatter">The formatter we are matching against.</param>
+            <returns>A <see cref="T:System.Net.Http.Formatting.MediaTypeFormatterMatch"/> indicating the quality of the match or null is no match.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultContentNegotiator.SortMediaTypeWithQualityHeaderValuesByQFactor(System.Collections.Generic.ICollection{System.Net.Http.Headers.MediaTypeWithQualityHeaderValue})">
+            <summary>
+            Sort Accept header values and related header field values with similar syntax rules 
+            (if more than 1) in descending order based on q-factor.
+            </summary>
+            <param name="headerValues">The header values to sort.</param>
+            <returns>The sorted header values.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultContentNegotiator.SortStringWithQualityHeaderValuesByQFactor(System.Collections.Generic.ICollection{System.Net.Http.Headers.StringWithQualityHeaderValue})">
+            <summary>
+            Sort Accept-Charset, Accept-Encoding, Accept-Language and related header field values with similar syntax rules 
+            (if more than 1) in descending order based on q-factor.
+            </summary>
+            <param name="headerValues">The header values to sort.</param>
+            <returns>The sorted header values.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultContentNegotiator.UpdateBestMatch(System.Net.Http.Formatting.MediaTypeFormatterMatch,System.Net.Http.Formatting.MediaTypeFormatterMatch)">
+            <summary>
+            Evaluates whether a match is better than the current match and if so returns the replacement; otherwise returns the current match.
+            </summary>
+            <param name="current">Current media type formatter match.</param>
+            <param name="potentialReplacement">Potential replacement.</param>
+            <returns>Best match.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultContentNegotiator.IsSubsetOf(System.Net.Http.Headers.MediaTypeHeaderValue,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Determines whether two <see cref="T:System.Net.Http.Headers.MediaTypeHeaderValue"/> instances match. The instance
+            <paramref name="mediaType1"/> is said to match <paramref name="mediaType2"/> if and only if
+            <paramref name="mediaType1"/> is a strict subset of the values and parameters of <paramref name="mediaType2"/>. 
+            That is, if the media type and media type parameters of <paramref name="mediaType1"/> are all present 
+            and match those of <paramref name="mediaType2"/> then it is a match even though <paramref name="mediaType2"/> may have additional
+            parameters.
+            </summary>
+            <param name="mediaType1">The first media type.</param>
+            <param name="mediaType2">The second media type.</param>
+            <returns><c>true</c> if this is a subset of <paramref name="mediaType2"/>; false otherwise.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultContentNegotiator.IsSubsetOf(System.Net.Http.Headers.MediaTypeHeaderValue,System.Net.Http.Headers.MediaTypeHeaderValue,Ctrip.Duckbill.Net.Http.Formating.Implement.MediaTypeHeaderValueRange@)">
+            <summary>
+            Determines whether two <see cref="T:System.Net.Http.Headers.MediaTypeHeaderValue"/> instances match. The instance
+            <paramref name="mediaType1"/> is said to match <paramref name="mediaType2"/> if and only if
+            <paramref name="mediaType1"/> is a strict subset of the values and parameters of <paramref name="mediaType2"/>. 
+            That is, if the media type and media type parameters of <paramref name="mediaType1"/> are all present 
+            and match those of <paramref name="mediaType2"/> then it is a match even though <paramref name="mediaType2"/> may have additional
+            parameters.
+            </summary>
+            <param name="mediaType1">The first media type.</param>
+            <param name="mediaType2">The second media type.</param>
+            <param name="mediaType2Range">Indicates whether <paramref name="mediaType2"/> is a regular media type, a subtype media range, or a full media range.</param>
+            <returns><c>true</c> if this is a subset of <paramref name="mediaType2"/>; false otherwise.</returns>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultMediaTypeWithQualityHeaderValueComparer">
+            <summary>
+            Default media type with quanlity header value comparer.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultMediaTypeWithQualityHeaderValueComparer.Match">
+            <summary>
+            Quality factor to indicate a perfect match.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultMediaTypeWithQualityHeaderValueComparer.Compare(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue,System.Net.Http.Headers.MediaTypeWithQualityHeaderValue)">
+            <summary>
+            Compares two <see cref="T:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue"/> based on their quality value (a.k.a their "q-value").
+            Values with identical q-values are considered equal (i.e the result is 0) with the exception that sub-type wild-cards are 
+            considered less than specific media types and full wild-cards are considered less than sub-type wild-cards. This allows to 
+            sort a sequence of <see cref="T:System.Net.Http.Headers.StringWithQualityHeaderValue"/> following their q-values in the order of specific media types,
+            sub-type wildcards, and last any full wild-cards.
+            </summary>
+            <param name="mediaType1">The first <see cref="T:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue"/> to compare.</param>
+            <param name="mediaType2">The second <see cref="T:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue"/> to compare.</param>
+            <returns>Compare result.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultMediaTypeWithQualityHeaderValueComparer.CompareBasedOnQualityFactor(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue,System.Net.Http.Headers.MediaTypeWithQualityHeaderValue)">
+            <summary>
+            Compares two <see cref="T:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue"/> based on their quality value (a.k.a their "q-value").
+            Values with identical q-values are considered equal (i.e the result is 0) with the exception that sub-type wild-cards are 
+            considered less than specific media types and full wild-cards are considered less than sub-type wild-cards. This allows to 
+            sort a sequence of <see cref="T:System.Net.Http.Headers.StringWithQualityHeaderValue"/> following their q-values in the order of specific media types,
+            sub-type wildcards, and last any full wild-cards.
+            </summary>
+            <param name="mediaType1">The first <see cref="T:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue"/> to compare.</param>
+            <param name="mediaType2">The second <see cref="T:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue"/> to compare.</param>
+            <returns>Comparer result.</returns>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultStringWithQualityHeaderValueComparer">
+            <summary>
+            String with quanlity header value comparer.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultStringWithQualityHeaderValueComparer.Match">
+            <summary>
+            Quality factor to indicate a perfect match.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.Implement.DefaultStringWithQualityHeaderValueComparer.Compare(System.Net.Http.Headers.StringWithQualityHeaderValue,System.Net.Http.Headers.StringWithQualityHeaderValue)">
+            <summary>
+            Compares two <see cref="T:System.Net.Http.Headers.StringWithQualityHeaderValue"/> based on their quality value (a.k.a their "q-value").
+            Values with identical q-values are considered equal (i.e the result is 0) with the exception of wild-card
+            values (i.e. a value of "*") which are considered less than non-wild-card values. This allows to sort
+            a sequence of <see cref="T:System.Net.Http.Headers.StringWithQualityHeaderValue"/> following their q-values ending up with any
+            wild-cards at the end.
+            </summary>
+            <param name="stringWithQuality1">The first value to compare.</param>
+            <param name="stringWithQuality2">The second value to compare.</param>
+            <returns>The result of the comparison.</returns>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.Formating.Implement.MediaTypeHeaderValueRange">
+            <summary>
+            Media type header value range.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.Implement.MediaTypeHeaderValueRange.None">
+            <summary>
+            Not a media type range.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.Implement.MediaTypeHeaderValueRange.SubtypeMediaRange">
+            <summary>
+            A subtype media range, e.g. "application/*".
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.Implement.MediaTypeHeaderValueRange.AllMediaRange">
+            <summary>
+            An all media range, e.g. "*/*".
+            </summary>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.Formating.Implement.ParsedMediaTypeHeaderValue">
+            <summary>
+            Parsed media type header value.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.Implement.ParsedMediaTypeHeaderValue.MediaRangeAsterisk">
+            <summary>
+            Media range asterisk.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.Implement.ParsedMediaTypeHeaderValue.MediaTypeSubtypeDelimiter">
+            <summary>
+            Media type sub type delimiter.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.Implement.ParsedMediaTypeHeaderValue.isAllMediaRange">
+            <summary>
+            Flag of whether is all media range.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.Implement.ParsedMediaTypeHeaderValue.isSubtypeMediaRange">
+            <summary>
+            Flag of whether is sub type media range.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.Implement.ParsedMediaTypeHeaderValue.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Initializes a new instance of the ParsedMediaTypeHeaderValue class.
+            </summary>
+            <param name="mediaType">Media type.</param>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.Formating.Implement.ParsedMediaTypeHeaderValue.Type">
+            <summary>
+            Gets type.
+            </summary>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.Formating.Implement.ParsedMediaTypeHeaderValue.Subtype">
+            <summary>
+            Gets sub type.
+            </summary>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.Formating.Implement.ParsedMediaTypeHeaderValue.IsAllMediaRange">
+            <summary>
+            Gets a value indicating whether is all media range.
+            </summary>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.Formating.Implement.ParsedMediaTypeHeaderValue.IsSubtypeMediaRange">
+            <summary>
+            Gets a value indicating whether is sub type media range.
+            </summary>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.Formating.IStringWithQualityHeaderValueComparer">
+            <summary>
+            String with quanlity header value comparer.
+            </summary>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.Formating.JsonFormatter">
+            <summary>
+            EC version json media type formatter.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.JsonFormatter.jsonSerializer">
+            <summary>
+            Json serializer.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.JsonFormatter.#ctor">
+            <summary>
+            Initializes a new instance of the JsonFormatter class.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.JsonFormatter.CanReadType(System.Type)">
+            <summary>
+            Queries whether this System.Net.Http.Formatting.MediaTypeFormatter can deserializean object of the specified type.
+            </summary>
+            <param name="type">The type to deserialize.</param>
+            <returns>True if the System.Net.Http.Formatting.MediaTypeFormatter can deserialize the type; otherwise, false.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.JsonFormatter.CanWriteType(System.Type)">
+            <summary>
+            Queries whether this System.Net.Http.Formatting.MediaTypeFormatter can serializean object of the specified type.
+            </summary>
+            <param name="type">The type to serialize.</param>
+            <returns>true if the System.Net.Http.Formatting.MediaTypeFormatter can serialize the type; otherwise, false.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.JsonFormatter.WriteToStream(System.Type,System.Object,System.IO.Stream,System.Net.Http.HttpContent)">
+            <summary>
+            Writes synchronously to the buffered stream.
+            </summary>
+            <remarks>
+            An implementation of this method should close <paramref name="writeStream"/> upon completion.
+            </remarks>
+            <param name="type">The type of the object to write.</param>
+            <param name="value">The object value to write.  It may be <c>null</c>.</param>
+            <param name="writeStream">The <see cref="T:System.IO.Stream"/> to which to write.</param>
+            <param name="content">The <see cref="T:System.Net.Http.HttpContent"/> if available. Note that modifying the headers of the content will have no effect on the generated HTTP message; they should only be used to guide the writing.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.JsonFormatter.ReadFromStream(System.Type,System.IO.Stream,System.Net.Http.HttpContent,System.Net.Http.Formatting.IFormatterLogger)">
+            <summary>
+            Reads synchronously from the buffered stream.
+            </summary>
+            <remarks>
+            An implementation of this method should close <paramref name="readStream"/> upon completion.
+            </remarks>
+            <param name="type">The type of the object to deserialize.</param>
+            <param name="readStream">The <see cref="T:System.IO.Stream"/> to read.</param>
+            <param name="content">The <see cref="T:System.Net.Http.HttpContent"/> if available.</param>
+            <param name="formatterLogger">The <see cref="T:System.Net.Http.Formatting.IFormatterLogger"/> to log events to.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.Formating.MediaTypeConstants">
+            <summary>
+            Constants related to media types.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.MediaTypeConstants.ApplicationXmlMediaTypeOriginal">
+            <summary>
+            Application xml media type.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.MediaTypeConstants.TextXmlMediaTypeOriginal">
+            <summary>
+            Text xml media type.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.MediaTypeConstants.ApplicationJsonMediaTypeOriginal">
+            <summary>
+            Application json media type.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.MediaTypeConstants.TextJsonMediaTypeOriginal">
+            <summary>
+            Text json media type.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.MediaTypeConstants.ApplicationGsonMediaTypeOriginal">
+            <summary>
+            Application gson media type.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.MediaTypeConstants.TextGsonMediaTypeOriginal">
+            <summary>
+            Text gson media type.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.MediaTypeConstants.ApplicationOctetStreamMediaTypeOriginal">
+            <summary>
+            Application octet stream media type.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.MediaTypeConstants.ApplicationFormUrlEncodedMediaTypeOriginal">
+            <summary>
+            Application form url encoded media type.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.MediaTypeConstants.HtmlTextDataMediaTypeOriginal">
+            <summary>
+            Html text data media type encoded media type.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.MediaTypeConstants.PlainTextMediaTypeOriginal">
+            <summary>
+            Plain text media type.
+            </summary>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.Formating.MediaTypeConstants.ApplicationXmlMediaType">
+            <summary>
+            Gets a <see cref="T:System.Net.Http.Headers.MediaTypeHeaderValue"/> instance representing <c>application/xml</c>.
+            </summary>
+            <value>
+            A new <see cref="T:System.Net.Http.Headers.MediaTypeHeaderValue"/> instance representing <c>application/xml</c>.
+            </value>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.Formating.MediaTypeConstants.TextXmlMediaType">
+            <summary>
+            Gets a <see cref="T:System.Net.Http.Headers.MediaTypeHeaderValue"/> instance representing <c>text/xml</c>.
+            </summary>
+            <value>
+            A new <see cref="T:System.Net.Http.Headers.MediaTypeHeaderValue"/> instance representing <c>text/xml</c>.
+            </value>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.Formating.MediaTypeConstants.ApplicationJsonMediaType">
+            <summary>
+            Gets a <see cref="T:System.Net.Http.Headers.MediaTypeHeaderValue"/> instance representing <c>application/json</c>.
+            </summary>
+            <value>
+            A new <see cref="T:System.Net.Http.Headers.MediaTypeHeaderValue"/> instance representing <c>application/json</c>.
+            </value>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.Formating.MediaTypeConstants.TextJsonMediaType">
+            <summary>
+            Gets a <see cref="T:System.Net.Http.Headers.MediaTypeHeaderValue"/> instance representing <c>text/json</c>.
+            </summary>
+            <value>
+            A new <see cref="T:System.Net.Http.Headers.MediaTypeHeaderValue"/> instance representing <c>text/json</c>.
+            </value>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.Formating.MediaTypeConstants.ApplicationGsonMediaType">
+            <summary>
+            Gets a <see cref="T:System.Net.Http.Headers.MediaTypeHeaderValue"/> instance representing <c>application/gson</c>.
+            </summary>
+            <value>
+            A new <see cref="T:System.Net.Http.Headers.MediaTypeHeaderValue"/> instance representing <c>application/gjson</c>.
+            </value>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.Formating.MediaTypeConstants.TextGsonMediaType">
+            <summary>
+            Gets a <see cref="T:System.Net.Http.Headers.MediaTypeHeaderValue"/> instance representing <c>text/gson</c>.
+            </summary>
+            <value>
+            A new <see cref="T:System.Net.Http.Headers.MediaTypeHeaderValue"/> instance representing <c>text/gson</c>.
+            </value>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.Formating.MediaTypeConstants.ApplicationOctetStreamMediaType">
+            <summary>
+            Gets a <see cref="T:System.Net.Http.Headers.MediaTypeHeaderValue"/> instance representing <c>application/octet-stream</c>.
+            </summary>
+            <value>
+            A new <see cref="T:System.Net.Http.Headers.MediaTypeHeaderValue"/> instance representing <c>application/octet-stream</c>.
+            </value>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.Formating.MediaTypeConstants.ApplicationFormUrlEncodedMediaType">
+            <summary>
+            Gets a <see cref="T:System.Net.Http.Headers.MediaTypeHeaderValue"/> instance representing <c>application/x-www-form-urlencoded</c>.
+            </summary>
+            <value>
+            A new <see cref="T:System.Net.Http.Headers.MediaTypeHeaderValue"/> instance representing <c>application/x-www-form-urlencoded</c>.
+            </value>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.Formating.MediaTypeConstants.HtmlTextDataMediaType">
+            <summary>
+            Gets a <see cref="T:System.Net.Http.Headers.MediaTypeHeaderValue"/> instance representing <c>text/html</c>.
+            </summary>
+            <value>
+            A new <see cref="T:System.Net.Http.Headers.MediaTypeHeaderValue"/> instance representing <c>text/html</c>.
+            </value>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.Formating.MediaTypeConstants.PlainTextMediaType">
+            <summary>
+            Gets a <see cref="T:System.Net.Http.Headers.MediaTypeHeaderValue"/> instance representing <c>text/plain</c>.
+            </summary>
+            <value>
+            A new <see cref="T:System.Net.Http.Headers.MediaTypeHeaderValue"/> instance representing <c>text/plain</c>.
+            </value>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.Formating.StringFormatter">
+            <summary>
+            EC version string media type formatter.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.StringFormatter.#ctor">
+            <summary>
+            Initializes a new instance of the StringFormatter class.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.StringFormatter.CanReadType(System.Type)">
+            <summary>
+            Queries whether this System.Net.Http.Formatting.MediaTypeFormatter can deserializean object of the specified type.
+            </summary>
+            <param name="type">The type to deserialize.</param>
+            <returns>True if the System.Net.Http.Formatting.MediaTypeFormatter can deserialize the type; otherwise, false.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.StringFormatter.CanWriteType(System.Type)">
+            <summary>
+            Queries whether this System.Net.Http.Formatting.MediaTypeFormatter can serializean object of the specified type.
+            </summary>
+            <param name="type">The type to serialize.</param>
+            <returns>true if the System.Net.Http.Formatting.MediaTypeFormatter can serialize the type; otherwise, false.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.StringFormatter.WriteToStream(System.Type,System.Object,System.IO.Stream,System.Net.Http.HttpContent)">
+            <summary>
+            Writes synchronously to the buffered stream.
+            </summary>
+            <remarks>
+            An implementation of this method should close <paramref name="writeStream"/> upon completion.
+            </remarks>
+            <param name="type">The type of the object to write.</param>
+            <param name="value">The object value to write.  It may be <c>null</c>.</param>
+            <param name="writeStream">The <see cref="T:System.IO.Stream"/> to which to write.</param>
+            <param name="content">The <see cref="T:System.Net.Http.HttpContent"/> if available. Note that modifying the headers of the content will have no effect on the generated HTTP message; they should only be used to guide the writing.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.StringFormatter.ReadFromStream(System.Type,System.IO.Stream,System.Net.Http.HttpContent,System.Net.Http.Formatting.IFormatterLogger)">
+            <summary>
+            Reads synchronously from the buffered stream.
+            </summary>
+            <remarks>
+            An implementation of this method should close <paramref name="readStream"/> upon completion.
+            </remarks>
+            <param name="type">The type of the object to deserialize.</param>
+            <param name="readStream">The <see cref="T:System.IO.Stream"/> to read.</param>
+            <param name="content">The <see cref="T:System.Net.Http.HttpContent"/> if available.</param>
+            <param name="formatterLogger">The <see cref="T:System.Net.Http.Formatting.IFormatterLogger"/> to log events to.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.Formating.XmlFormatter">
+            <summary>
+            Xml media type formatter.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.Formating.XmlFormatter.xmlSerializer">
+            <summary>
+            Json serializer.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.XmlFormatter.#ctor">
+            <summary>
+            Initializes a new instance of the XmlFormatter class.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.XmlFormatter.CanReadType(System.Type)">
+            <summary>
+            Queries whether this System.Net.Http.Formatting.MediaTypeFormatter can deserializean object of the specified type.
+            </summary>
+            <param name="type">The type to deserialize.</param>
+            <returns>True if the System.Net.Http.Formatting.MediaTypeFormatter can deserialize the type; otherwise, false.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.XmlFormatter.CanWriteType(System.Type)">
+            <summary>
+            Queries whether this System.Net.Http.Formatting.MediaTypeFormatter can serializean object of the specified type.
+            </summary>
+            <param name="type">The type to serialize.</param>
+            <returns>true if the System.Net.Http.Formatting.MediaTypeFormatter can serialize the type; otherwise, false.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.XmlFormatter.WriteToStream(System.Type,System.Object,System.IO.Stream,System.Net.Http.HttpContent)">
+            <summary>
+            Writes synchronously to the buffered stream.
+            </summary>
+            <remarks>
+            An implementation of this method should close <paramref name="writeStream"/> upon completion.
+            </remarks>
+            <param name="type">The type of the object to write.</param>
+            <param name="value">The object value to write.  It may be <c>null</c>.</param>
+            <param name="writeStream">The <see cref="T:System.IO.Stream"/> to which to write.</param>
+            <param name="content">The <see cref="T:System.Net.Http.HttpContent"/> if available. Note that modifying the headers of the content will have no effect on the generated HTTP message; they should only be used to guide the writing.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.Formating.XmlFormatter.ReadFromStream(System.Type,System.IO.Stream,System.Net.Http.HttpContent,System.Net.Http.Formatting.IFormatterLogger)">
+            <summary>
+            Reads synchronously from the buffered stream.
+            </summary>
+            <remarks>
+            An implementation of this method should close <paramref name="readStream"/> upon completion.
+            </remarks>
+            <param name="type">The type of the object to deserialize.</param>
+            <param name="readStream">The <see cref="T:System.IO.Stream"/> to read.</param>
+            <param name="content">The <see cref="T:System.Net.Http.HttpContent"/> if available.</param>
+            <param name="formatterLogger">The <see cref="T:System.Net.Http.Formatting.IFormatterLogger"/> to log events to.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.HttpMessageHandlers.IHandlersFactory">
+            <summary>
+            Handlers factory.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.HttpMessageHandlers.IHandlersFactory.CreateGizHandler">
+            <summary>
+            Create gzip handler.
+            </summary>
+            <returns>Giz handler.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.HttpMessageHandlers.IHandlersFactory.CreateLogHandler">
+            <summary>
+            Create log handler.
+            </summary>
+            <returns>Log handler.</returns>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.HttpMessageHandlers.Implement.DefaultHandersFactory">
+            <summary>
+            Default handers factory.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.HttpMessageHandlers.Implement.DefaultHandersFactory.config">
+            <summary>
+            Restful service config repository.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.HttpMessageHandlers.Implement.DefaultHandersFactory.frameworkLoggerFactory">
+            <summary>
+            Framework logger factory.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.HttpMessageHandlers.Implement.DefaultHandersFactory.#ctor(Ctrip.Duckbill.RestClient.IRestfulServiceConfigRepository,Ctrip.Duckbill.Log.IFrameworkLoggerFactory)">
+            <summary>
+            Initializes a new instance of the DefaultHandersFactory class.
+            </summary>
+            <param name="config">Configuration repository.</param>
+            <param name="frameworkLoggerFactory">The framework logger factory.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.HttpMessageHandlers.Implement.DefaultHandersFactory.CreateGizHandler">
+            <summary>
+            Create gzip handler.
+            </summary>
+            <returns>Giz handler.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.HttpMessageHandlers.Implement.DefaultHandersFactory.CreateLogHandler">
+            <summary>
+            Create log handler.
+            </summary>
+            <returns>Log handler.</returns>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.HttpMessageHandlers.Implement.LogProcessHandler">
+            <summary>
+            Log request and response information handler.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.HttpMessageHandlers.Implement.LogProcessHandler.taskFactory">
+            <summary>
+            Task factory.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.HttpMessageHandlers.Implement.LogProcessHandler.config">
+            <summary>
+            Restful service config repository.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.HttpMessageHandlers.Implement.LogProcessHandler.frameworkLoggerFactory">
+            <summary>
+            Framework logger factory.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.HttpMessageHandlers.Implement.LogProcessHandler.#ctor(Ctrip.Duckbill.RestClient.IRestfulServiceConfigRepository,Ctrip.Duckbill.Log.IFrameworkLoggerFactory)">
+            <summary>
+            Initializes a new instance of the LogProcessHandler class.
+            </summary>
+            <param name="config">Configuration repository.</param>
+            <param name="frameworkLoggerFactory">Framework logger factory.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.HttpMessageHandlers.Implement.LogProcessHandler.ProcessRequest(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <summary>
+            Processes an HTTP request message.
+            </summary>
+            <param name="request">The HTTP request message to process.</param>
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>Returns System.Net.Http.HttpRequestMessage.The HTTP request message that was processed.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.HttpMessageHandlers.Implement.LogProcessHandler.ProcessResponse(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)">
+            <summary>
+            Processes an HTTP response message.
+            </summary>
+            <param name="response">The HTTP response message to process.</param>
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>Returns System.Net.Http.HttpResponseMessage.The HTTP response message that was processed.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.HttpMessageHandlers.Implement.LogProcessHandler.LogRequest(System.Net.Http.HttpRequestMessage)">
+            <summary>
+            Log request.
+            </summary>
+            <param name="request">The HTTP request message to process.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.HttpMessageHandlers.Implement.LogProcessHandler.LogResponse(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Log request.
+            </summary>
+            <param name="response">The HTTP response message to process.</param>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.RestClient.IHttpRequestMessageFactory">
+            <summary>
+            Http request message factory.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.IHttpRequestMessageFactory.CreateRequestMessage(Ctrip.Duckbill.RestClient.IRestfulRequest,System.String)">
+            <summary>
+            Create request message.
+            </summary>
+            <param name="request">Restful request.</param>
+            <param name="url">Requested url.</param>
+            <returns>Http request message.</returns>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.RestClient.IResponseFactory">
+            <summary>
+            Response factory.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.IResponseFactory.CreateResponse(Ctrip.Duckbill.RestClient.IRestfulRequest,System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Create response.
+            </summary>
+            <param name="request">Restful request.</param>
+            <param name="response">Http response message.</param>
+            <returns>Restful response.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.IResponseFactory.CreateResponse``1(Ctrip.Duckbill.RestClient.IRestfulRequest,System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Create response.
+            </summary>
+            <typeparam name="TResponse">Type of response.</typeparam>
+            <param name="request">Restful request.</param>
+            <param name="response">Http response message.</param>
+            <returns>Restful response.</returns>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.RestClient.IRestfulResponseErrorProcessor">
+            <summary>
+            Response error processor.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.IRestfulResponseErrorProcessor.ProcessError(System.Net.Http.HttpResponseMessage,System.String@,System.String[]@)">
+            <summary>
+            Process error.
+            </summary>
+            <param name="responseMessage">Http response message.</param>
+            <param name="responseCode">Response code.</param>
+            <param name="reasonPhrase">Reason phrase.</param>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.RestClient.ISystemHttpClient">
+            <summary>
+            System http client.
+            </summary>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.RestClient.ISystemHttpClient.MaxResponseSize">
+            <summary>
+            Gets or sets max response sieze.
+            </summary>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.RestClient.ISystemHttpClient.Timeout">
+            <summary>
+            Gets or sets a timespan that cookie will expires after it.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.ISystemHttpClient.SendAsync(System.Net.Http.HttpRequestMessage)">
+            <summary>
+            Send an HTTP request as an asynchronous operation.
+            </summary>
+            <param name="restfulRequest">The HTTP request message to send.</param>
+            <returns>Returns System.Threading.Tasks.Task TResult.The task object representing the asynchronous operation.</returns>
+            <exception cref="T:System.ArgumentNullException">The request was null.</exception>
+            <exception cref="T:System.InvalidOperationException">The request message was already sent by the System.Net.Http.HttpClient instance.</exception>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.ISystemHttpClient.Send(System.Net.Http.HttpRequestMessage)">
+            <summary>
+            Send an HTTP request.
+            </summary>
+            <param name="restfulRequest">The HTTP request message to send.</param>
+            <returns>Http response message.</returns>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.RestClient.ISystemHttpClientFactory">
+            <summary>
+            System http client factory.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.ISystemHttpClientFactory.CreateClient(Ctrip.Duckbill.RestClient.IRestfulRequest)">
+            <summary>
+            Create http client.
+            </summary>
+            <param name="request">Restful request.</param> 
+            <returns>Http client.</returns>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultHttpRequestMessageFactory">
+            <summary>
+            Default http request message factory.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultHttpRequestMessageFactory.contentNegotiator">
+            <summary>
+            Content negotiator.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultHttpRequestMessageFactory.formattersRepository">
+            <summary>
+            Formatters repository.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultHttpRequestMessageFactory.#ctor(System.Net.Http.Formatting.IContentNegotiator,Ctrip.Duckbill.Net.Http.Formating.IMediaTypeFormattersRepository)">
+            <summary>
+            Initializes a new instance of the DefaultHttpRequestMessageFactory class.
+            </summary>
+            <param name="contentNegotiator">Content negotiator.</param>
+            <param name="formattersRepository">Formatters repository.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultHttpRequestMessageFactory.CreateRequestMessage(Ctrip.Duckbill.RestClient.IRestfulRequest,System.String)">
+            <summary>
+            Create request message.
+            </summary>
+            <param name="request">Restful request.</param>
+            <param name="url">Requested url.</param>
+            <returns>Http request message.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultHttpRequestMessageFactory.CreateGetRequestMessage(Ctrip.Duckbill.RestClient.IRestfulRequest,System.String)">
+            <summary>
+            Create get request message.
+            </summary>
+            <param name="request">Restful request.</param>
+            <param name="url">Requested url.</param>
+            <returns>Http request message.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultHttpRequestMessageFactory.CreatePostRequestMessage(Ctrip.Duckbill.RestClient.IRestfulRequest,System.String)">
+            <summary>
+            Create post request message.
+            </summary>
+            <param name="request">Restful request.</param>
+            <param name="url">Requested url.</param>
+            <returns>Http request message.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultHttpRequestMessageFactory.CreatePutRequestMessage(Ctrip.Duckbill.RestClient.IRestfulRequest,System.String)">
+            <summary>
+            Create put request message.
+            </summary>
+            <param name="request">Restful request.</param>
+            <param name="url">Requested url.</param>
+            <returns>Http request message.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultHttpRequestMessageFactory.CreateDeleteRequestMessage(Ctrip.Duckbill.RestClient.IRestfulRequest,System.String)">
+            <summary>
+            Create delete request message.
+            </summary>
+            <param name="request">Restful request.</param>
+            <param name="url">Requested url.</param>
+            <returns>Http request message.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultHttpRequestMessageFactory.GetRequestBody(Ctrip.Duckbill.RestClient.IRestfulRequest,System.Net.Http.HttpRequestMessage)">
+            <summary>
+            Get request body.
+            </summary>
+            <param name="request">Restful request.</param>
+            <param name="requestMessage">Request message.</param>
+            <returns>Http content.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultHttpRequestMessageFactory.ConfigureCommonSetting(Ctrip.Duckbill.RestClient.IRestfulRequest,System.Net.Http.HttpRequestMessage)">
+            <summary>
+            Configure common setting to request message.
+            </summary>
+            <param name="request">Restful request.</param>
+            <param name="requestMessage">Request message.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultHttpRequestMessageFactory.ConfigureGzip(System.Net.Http.HttpRequestMessage)">
+            <summary>
+            Configure request gzip support.
+            </summary>
+            <param name="requestMessage">Http request message.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultHttpRequestMessageFactory.ConfigureHttpHeader(Ctrip.Duckbill.RestClient.IRestfulRequest,System.Net.Http.Headers.HttpHeaders)">
+            <summary>
+            Configure header.
+            </summary>
+            <param name="request">Restful request.</param>
+            <param name="headers">Http headers.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultHttpRequestMessageFactory.ConfigureCookies(Ctrip.Duckbill.RestClient.IRestfulRequest,System.Net.Http.Headers.HttpHeaders)">
+            <summary>
+            Configure cookies.
+            </summary>
+            <param name="request">Restful request.</param>
+            <param name="headers">Http headers.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultHttpRequestMessageFactory.ConfigureHeaderValues(Ctrip.Duckbill.RestClient.IRestfulRequest,System.Net.Http.Headers.HttpHeaders)">
+            <summary>
+            Configure headers.
+            </summary>
+            <param name="request">Restful request.</param>
+            <param name="headers">Http headers.</param>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultResponseFactory">
+            <summary>
+            Default response factory.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultResponseFactory.errorProcessor">
+            <summary>
+            Restful response error processor.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultResponseFactory.formattersRepository">
+            <summary>
+            Formatters repository.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultResponseFactory.#ctor(Ctrip.Duckbill.Net.Http.Formating.IMediaTypeFormattersRepository)">
+            <summary>
+            Initializes a new instance of the DefaultResponseFactory class.
+            </summary>
+            <param name="formattersRepository">Formatters repository.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultResponseFactory.#ctor(Ctrip.Duckbill.Net.Http.RestClient.IRestfulResponseErrorProcessor,Ctrip.Duckbill.Net.Http.Formating.IMediaTypeFormattersRepository)">
+            <summary>
+            Initializes a new instance of the DefaultResponseFactory class.
+            </summary>
+            <param name="errorProcessor">Error processor.</param>
+            <param name="formattersRepository">Formatters repository.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultResponseFactory.CreateResponse(Ctrip.Duckbill.RestClient.IRestfulRequest,System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Create response.
+            </summary>
+            <param name="request">Restful request.</param>
+            <param name="response">Http response message.</param>
+            <returns>Restful response.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultResponseFactory.CreateResponse``1(Ctrip.Duckbill.RestClient.IRestfulRequest,System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Create response.
+            </summary>
+            <typeparam name="TResponse">Type of response.</typeparam>
+            <param name="request">Restful request.</param>
+            <param name="response">Http response message.</param>
+            <returns>Restful response.</returns>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultRestfulResponse">
+            <summary>
+            Default restful response.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultRestfulResponse.errorProcessor">
+            <summary>
+            Restful response error processor.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultRestfulResponse.#ctor(Ctrip.Duckbill.RestClient.IRestfulRequest,System.Net.Http.HttpResponseMessage,Ctrip.Duckbill.Net.Http.RestClient.IRestfulResponseErrorProcessor)">
+            <summary>
+            Initializes a new instance of the DefaultRestfulResponse class.
+            </summary>
+            <param name="request">Restful request.</param>
+            <param name="response">Http response message.</param>
+            <param name="errorProcessor">Error processor.</param>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultRestfulResponse.Headers">
+            <summary>
+            Gets head collection.
+            </summary>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultRestfulResponse.RequestID">
+            <summary>
+            Gets request id.
+            </summary>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultRestfulResponse.RequestedUrl">
+            <summary>
+            Gets requested url.
+            </summary>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultRestfulResponse.IsSuccessStatusCode">
+            <summary>
+            Gets a value indicating whether the HTTP response was successful.
+            </summary>
+            <value>Returns System.Boolean.A value that indicates if the HTTP response was successful. True if System.Net.Http.HttpResponseMessage.StatusCode was in the range 200-299; otherwise false.</value>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultRestfulResponse.StatusCode">
+            <summary>
+            Gets the status code of the HTTP response.
+            </summary>
+            <value>Returns System.Net.HttpStatusCode.The status code of the HTTP response.</value>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultRestfulResponse.MessageCode">
+            <summary>
+            Gets the response code. Response code is defined as a business code.
+            </summary>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultRestfulResponse.ReasonPhrase">
+            <summary>
+            Gets the reason phrase which typically is sent by servers together with the status code.
+            </summary>
+            <value>Returns System.String.The reason phrase sent by the server.</value>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultRestfulResponse.ResponseBodyBytes">
+            <summary>
+            Gets response body bytes.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultRestfulResponse.SetHeader(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Set response header.
+            </summary>
+            <param name="response">Response message.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultRestfulResponse.SetRquestedUrl(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Set requested url.
+            </summary>
+            <param name="response">Response message.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultRestfulResponse.SetBodyBytes(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Set body bytes.
+            </summary>
+            <param name="response">Response message.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultRestfulResponse.ProcessError(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Process error.
+            </summary>
+            <param name="response">Response message.</param>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultRestfulResponse`1">
+            <summary>
+            Default generic restful response.
+            </summary>
+            <typeparam name="TResponse">Response type.</typeparam>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultRestfulResponse`1.#ctor(Ctrip.Duckbill.RestClient.IRestfulRequest,System.Net.Http.HttpResponseMessage,Ctrip.Duckbill.Net.Http.RestClient.IRestfulResponseErrorProcessor,Ctrip.Duckbill.Net.Http.Formating.IMediaTypeFormattersRepository)">
+            <summary>
+            Initializes a new instance of the DefaultRestfulResponse class.
+            </summary>
+            <param name="request">Restful request.</param>
+            <param name="response">Http response message.</param>
+            <param name="errorProcessor">Error processor.</param>
+            <param name="formattersRepository">Formatters repository.</param>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultRestfulResponse`1.ResponseBody">
+            <summary>
+            Gets response body.
+            </summary>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultSystemHttpClient">
+            <summary>
+            Base system http client.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultSystemHttpClient.client">
+            <summary>
+            Http client.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultSystemHttpClient.#ctor(System.Net.Http.HttpMessageHandler)">
+            <summary>
+            Initializes a new instance of the DefaultSystemHttpClient class.
+            </summary>
+            <param name="handler">Restful restfulRequest.</param>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultSystemHttpClient.MaxResponseSize">
+            <summary>
+            Gets or sets max response size.
+            </summary>
+        </member>
+        <member name="P:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultSystemHttpClient.Timeout">
+            <summary>
+            Gets or sets a timespan that cookie will expires after it.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultSystemHttpClient.SendAsync(System.Net.Http.HttpRequestMessage)">
+            <summary>
+            Send an HTTP restfulRequest as an asynchronous operation.
+            </summary>
+            <param name="restfulRequest">The HTTP restfulRequest message to send.</param>
+            <returns>Returns System.Threading.Tasks.Task TResult.The task object representing the asynchronous operation.</returns>
+            <exception cref="T:System.ArgumentNullException">The restfulRequest was null.</exception>
+            <exception cref="T:System.InvalidOperationException">The restfulRequest message was already sent by the System.Net.Http.HttpClient instance.</exception>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultSystemHttpClient.Send(System.Net.Http.HttpRequestMessage)">
+            <summary>
+            Send an HTTP restfulRequest.
+            </summary>
+            <param name="restfulRequest">The HTTP restfulRequest message to send.</param>
+            <returns>Http response message.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultSystemHttpClient.Dispose">
+            <summary>
+            Release current http client.
+            </summary>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultSystemHttpClientFactory">
+            <summary>
+            Default system http client factory.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultSystemHttpClientFactory.handlersFactory">
+            <summary>
+            Handlers factory.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultSystemHttpClientFactory.clientPool">
+            <summary>
+            Client pool.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultSystemHttpClientFactory.#ctor(Ctrip.Duckbill.Net.Http.HttpMessageHandlers.IHandlersFactory)">
+            <summary>
+            Initializes a new instance of the DefaultSystemHttpClientFactory class.
+            </summary>
+            <param name="handlersFactory">Handlers factory.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultSystemHttpClientFactory.CreateClient(Ctrip.Duckbill.RestClient.IRestfulRequest)">
+            <summary>
+            Create http client.
+            </summary>
+            <param name="request">Restful request.</param> 
+            <returns>Http client.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultSystemHttpClientFactory.GenerateKey(Ctrip.Duckbill.RestClient.IRestfulRequest)">
+            <summary>
+            Generates the key.
+            </summary>
+            <param name="request">The request.</param>
+            <returns>Client Key.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultSystemHttpClientFactory.GenerateClient(Ctrip.Duckbill.RestClient.IRestfulRequest)">
+            <summary>
+            Create http client.
+            </summary>
+            <param name="request">Restful request.</param> 
+            <returns>Http client.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.DefaultSystemHttpClientFactory.CreateHandler(Ctrip.Duckbill.RestClient.IRestfulRequest)">
+            <summary>
+            Create http handler.
+            </summary>
+            <param name="restfulRequest">Restful restfulRequest.</param>
+            <returns>Http client.</returns>
+        </member>
+        <member name="T:Ctrip.Duckbill.Net.Http.RestClient.Implement.HttpClientRestfulClient">
+            <summary>
+            Http client restful client.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.RestClient.Implement.HttpClientRestfulClient.clientFactory">
+            <summary>
+            Client factory.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.RestClient.Implement.HttpClientRestfulClient.requestFactory">
+            <summary>
+            Request factory.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.RestClient.Implement.HttpClientRestfulClient.responseFactory">
+            <summary>
+            Response factory.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.RestClient.Implement.HttpClientRestfulClient.random">
+            <summary>
+            Random manager.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Net.Http.RestClient.Implement.HttpClientRestfulClient.frameworkLoggerFactory">
+            <summary>
+            Framework logger factory.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.HttpClientRestfulClient.#ctor(Ctrip.Duckbill.Net.Http.RestClient.ISystemHttpClientFactory,Ctrip.Duckbill.Net.Http.RestClient.IHttpRequestMessageFactory,Ctrip.Duckbill.Net.Http.RestClient.IResponseFactory,Ctrip.Duckbill.IRandom,Ctrip.Duckbill.Log.IFrameworkLoggerFactory)">
+            <summary>
+            Initializes a new instance of the HttpClientRestfulClient class.
+            </summary>
+            <param name="clientFactory">Client repository.</param>
+            <param name="requestFactory">Request factory.</param>
+            <param name="responseFactory">Response factory.</param>
+            <param name="random">Random manager.</param>
+            <param name="frameworkLoggerFactory">Framework logger factory.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.HttpClientRestfulClient.SendAsync(Ctrip.Duckbill.RestClient.IRestfulRequest)">
+            <summary>
+            Send request async.
+            </summary>
+            <param name="request">Restful request.</param>
+            <returns>Restful response.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.HttpClientRestfulClient.SendAsync``1(Ctrip.Duckbill.RestClient.IRestfulRequest)">
+            <summary>
+            Send request async.
+            </summary>
+            <typeparam name="TResponse">Type of response body.</typeparam>
+            <param name="request">Restful request.</param>
+            <returns>Restful response.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.HttpClientRestfulClient.SendAsync``1(Ctrip.Duckbill.RestClient.IRestfulRequest{``0})">
+            <summary>
+            Send request async.
+            </summary>
+            <typeparam name="TRequest">Type of request body.</typeparam>
+            <param name="request">Restful request.</param>
+            <returns>Restful response.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.HttpClientRestfulClient.SendAsync``2(Ctrip.Duckbill.RestClient.IRestfulRequest{``0})">
+            <summary>
+            Send request async.
+            </summary>
+            <typeparam name="TRequest">Type of request body.</typeparam>
+            <typeparam name="TResponse">Type of response body.</typeparam>
+            <param name="request">Restful request.</param>
+            <returns>Restful response.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.HttpClientRestfulClient.Send(Ctrip.Duckbill.RestClient.IRestfulRequest)">
+            <summary>
+            Send request sync.
+            </summary>
+            <param name="request">Restful request.</param>
+            <returns>Restful response.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.HttpClientRestfulClient.Send``1(Ctrip.Duckbill.RestClient.IRestfulRequest)">
+            <summary>
+            Send request sync.
+            </summary>
+            <typeparam name="TResponse">Type of response body.</typeparam>
+            <param name="request">Restful request.</param>
+            <returns>Restful response.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.HttpClientRestfulClient.Send``1(Ctrip.Duckbill.RestClient.IRestfulRequest{``0})">
+            <summary>
+            Send request sync.
+            </summary>
+            <typeparam name="TRequest">Type of request body.</typeparam>
+            <param name="request">Restful request.</param>
+            <returns>Restful response.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.HttpClientRestfulClient.Send``2(Ctrip.Duckbill.RestClient.IRestfulRequest{``0})">
+            <summary>
+            Send request sync.
+            </summary>
+            <typeparam name="TRequest">Type of request body.</typeparam>
+            <typeparam name="TResponse">Type of response body.</typeparam>
+            <param name="request">Restful request.</param>
+            <returns>Restful response.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.HttpClientRestfulClient.SendWithRetry(Ctrip.Duckbill.RestClient.IRestfulRequest)">
+            <summary>
+            Send with retry.
+            </summary>
+            <param name="request">Restful client.</param>
+            <returns>Http response message.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.HttpClientRestfulClient.GetRequestedUrl(Ctrip.Duckbill.RestClient.IRestfulRequest,System.Int32)">
+            <summary>
+            Get requested url.
+            </summary>
+            <param name="request">Restful request.</param>
+            <param name="tryTimes">Try times.</param>
+            <returns>Requested url.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.HttpClientRestfulClient.AddRequestFailMessage(Ctrip.Duckbill.Log.IFrameworkLogger,System.Text.StringBuilder,Ctrip.Duckbill.RestClient.VerbType,System.String,System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Add request fail message.
+            </summary>
+            <param name="logger">Current logger.</param>
+            <param name="builder">Message builder.</param>
+            <param name="verb">Http verb.</param>
+            <param name="url">Requested url.</param>
+            <param name="response">Http response message.</param>
+            <returns>Whether added message.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.HttpClientRestfulClient.AddRequestExceptionMessage(Ctrip.Duckbill.Log.IFrameworkLogger,System.Text.StringBuilder,Ctrip.Duckbill.RestClient.VerbType,System.String,System.Exception)">
+            <summary>
+            Add request exception message.
+            </summary>
+            <param name="logger">Current logger.</param>
+            <param name="builder">Message builder.</param>
+            <param name="verb">Http verb.</param>
+            <param name="url">Requested url.</param>
+            <param name="ex">Request exception.</param>
+            <returns>Whether added message.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.HttpClientRestfulClient.WriteLogger(Ctrip.Duckbill.Log.IFrameworkLogger,System.Boolean)">
+            <summary>
+            Write logger.
+            </summary>
+            <param name="logger">Framework logger.</param>
+            <param name="addedMessage">Added message.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.HttpClientRestfulClient.GetMaxRetryTimes(Ctrip.Duckbill.RestClient.IRestfulRequest)">
+            <summary>
+            Get max retry times.
+            </summary>
+            <param name="request">Restful request.</param>
+            <returns>Max retry times.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Net.Http.RestClient.Implement.HttpClientRestfulClient.ValidateResponse(System.Net.Http.HttpResponseMessage,System.Text.StringBuilder)">
+            <summary>
+            Validate response.
+            </summary>
+            <param name="response">Http response message.</param>
+            <param name="messageBuilder">Message builder.</param>
+        </member>
+    </members>
+</doc>

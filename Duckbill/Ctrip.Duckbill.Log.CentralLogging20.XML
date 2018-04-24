@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ctrip.Duckbill.Log.CentralLogging20</name>
+    </assembly>
+    <members>
+        <member name="T:Ctrip.Duckbill.Log.CentralLogging20.AsyncCentralLogger20Listener">
+            <summary>
+            Async central logger 20 listener.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Log.CentralLogging20.AsyncCentralLogger20Listener.logRepository">
+            <summary>
+            The log repository.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Log.CentralLogging20.AsyncCentralLogger20Listener.guidFactory">
+            <summary>
+            The unique identifier factory.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Log.CentralLogging20.AsyncCentralLogger20Listener.#ctor(Ctrip.Duckbill.Threading.ITaskFactory,Ctrip.Duckbill.Threading.ICurrentThread,Ctrip.Duckbill.Log.CentralLogging20.ILogRepository,Ctrip.Duckbill.IGuidFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ctrip.Duckbill.Log.CentralLogging20.AsyncCentralLogger20Listener" /> class.
+            </summary>
+            <param name="taskFactory">The task factory.</param>
+            <param name="currentThread">The current thread.</param>
+            <param name="logRepository">The log repository.</param>
+            <param name="guidFactory">The unique identifier factory.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Log.CentralLogging20.AsyncCentralLogger20Listener.RealWrite(Ctrip.Duckbill.Log.ILogEntry)">
+            <summary>
+            Reals write.
+            </summary>
+            <param name="log">The log.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Log.CentralLogging20.AsyncCentralLogger20Listener.WriteMessage(Freeway.Logging.ILog,Ctrip.Duckbill.Log.ILogEntry,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Writes the message.
+            </summary>
+            <param name="clog">The clog.</param>
+            <param name="log">The log.</param>
+            <param name="addInfo">The add information.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Log.CentralLogging20.AsyncCentralLogger20Listener.WriteMessage(Freeway.Logging.ILog,System.Diagnostics.TraceEventType,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Writes the message.
+            </summary>
+            <param name="clog">The clog.</param>
+            <param name="severity">The severity.</param>
+            <param name="logText">The log text.</param>
+            <param name="addInfo">The add information.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Log.CentralLogging20.AsyncCentralLogger20Listener.WriteException(Freeway.Logging.ILog,Ctrip.Duckbill.Log.ILogEntry,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Writes the exception.
+            </summary>
+            <param name="clog">The clog.</param>
+            <param name="log">The log.</param>
+            <param name="addInfo">The add information.</param>
+        </member>
+        <member name="T:Ctrip.Duckbill.Log.CentralLogging20.CentralLogger20Listener">
+            <summary>
+            Central logger 20 listener.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Log.CentralLogging20.CentralLogger20Listener.logRepository">
+            <summary>
+            The log repository.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Log.CentralLogging20.CentralLogger20Listener.guidFactory">
+            <summary>
+            The unique identifier factory.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Log.CentralLogging20.CentralLogger20Listener.#ctor(Ctrip.Duckbill.Log.CentralLogging20.ILogRepository,Ctrip.Duckbill.IGuidFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ctrip.Duckbill.Log.CentralLogging20.CentralLogger20Listener" /> class.
+            </summary>
+            <param name="logRepository">The log repository.</param>
+            <param name="guidFactory">The unique identifier factory.</param>
+        </member>
+        <member name="P:Ctrip.Duckbill.Log.CentralLogging20.CentralLogger20Listener.Name">
+            <summary>
+            Gets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="M:Ctrip.Duckbill.Log.CentralLogging20.CentralLogger20Listener.Write(Ctrip.Duckbill.Log.ILogEntry)">
+            <summary>
+            Reals write.
+            </summary>
+            <param name="log">The log.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Log.CentralLogging20.CentralLogger20Listener.WriteMessage(Freeway.Logging.ILog,Ctrip.Duckbill.Log.ILogEntry,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Writes the message.
+            </summary>
+            <param name="clog">The clog.</param>
+            <param name="log">The log.</param>
+            <param name="addInfo">The add information.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Log.CentralLogging20.CentralLogger20Listener.WriteMessage(Freeway.Logging.ILog,System.Diagnostics.TraceEventType,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Writes the message.
+            </summary>
+            <param name="clog">The clog.</param>
+            <param name="severity">The severity.</param>
+            <param name="logText">The log text.</param>
+            <param name="addInfo">The add information.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Log.CentralLogging20.CentralLogger20Listener.WriteException(Freeway.Logging.ILog,Ctrip.Duckbill.Log.ILogEntry,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Writes the exception.
+            </summary>
+            <param name="clog">The clog.</param>
+            <param name="log">The log.</param>
+            <param name="addInfo">The add information.</param>
+        </member>
+        <member name="T:Ctrip.Duckbill.Log.CentralLogging20.ILogManagerWrapper">
+            <summary>
+            Central logging log manager wrapper.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Log.CentralLogging20.ILogManagerWrapper.GetLogger(System.String)">
+            <summary>
+            Gets the logger.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>Central logging ILog.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Log.CentralLogging20.ILogManagerWrapper.GetLogger(System.Type)">
+            <summary>
+            Gets the logger.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>Central logging ILog.</returns>
+        </member>
+        <member name="T:Ctrip.Duckbill.Log.CentralLogging20.ILogRepository">
+            <summary>
+            Log repository.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Log.CentralLogging20.ILogRepository.GetLog(System.String)">
+            <summary>
+            Gets the log.
+            </summary>
+            <param name="title">The title.</param>
+            <returns>Central logging ILog.</returns>
+        </member>
+        <member name="T:Ctrip.Duckbill.Log.CentralLogging20.LogIOCModule">
+            <summary>
+            Log service module.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Log.CentralLogging20.LogIOCModule.Configure">
+            <summary>
+            Configure services.
+            </summary>
+        </member>
+        <member name="T:Ctrip.Duckbill.Log.CentralLogging20.LogManagerWrapper">
+            <summary>
+            Logging manager wrapper.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Log.CentralLogging20.LogManagerWrapper.GetLogger(System.String)">
+            <summary>
+            Gets the logger.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>Central logging ILog.</returns>
+        </member>
+        <member name="M:Ctrip.Duckbill.Log.CentralLogging20.LogManagerWrapper.GetLogger(System.Type)">
+            <summary>
+            Gets the logger.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>Central logging ILog.</returns>
+        </member>
+        <member name="T:Ctrip.Duckbill.Log.CentralLogging20.LogRepository">
+            <summary>
+            Log repository.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Log.CentralLogging20.LogRepository.logManagerWrapper">
+            <summary>
+            The log manager wrapper.
+            </summary>
+        </member>
+        <member name="F:Ctrip.Duckbill.Log.CentralLogging20.LogRepository.singletonLogs">
+            <summary>
+            Singleton central logging log.
+            </summary>
+        </member>
+        <member name="M:Ctrip.Duckbill.Log.CentralLogging20.LogRepository.#ctor(Ctrip.Duckbill.Log.CentralLogging20.ILogManagerWrapper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ctrip.Duckbill.Log.CentralLogging20.LogRepository"/> class.
+            </summary>
+            <param name="logManagerWrapper">The log manager wrapper.</param>
+        </member>
+        <member name="M:Ctrip.Duckbill.Log.CentralLogging20.LogRepository.GetLog(System.String)">
+            <summary>
+            Gets the log.
+            </summary>
+            <param name="title">The title.</param>
+            <returns>Central logging ILog.</returns>
+        </member>
+    </members>
+</doc>
