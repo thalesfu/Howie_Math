@@ -1,71 +1,75 @@
 ﻿using System;
 using System.Windows.Forms;
+using Ctrip.Duckbill;
+using Ctrip.Duckbill.Extensions;
+using Howie_Math_Study.questions;
+using Howie_Math_Study.utility;
 using Microsoft.Office.Interop.Excel;
 
 namespace Howie_Math_Study
 {
     public partial class Form1 : Form
     {
-        Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+        private readonly Microsoft.Office.Interop.Excel.Application excel;
+        private readonly IQuestionsBuilder tenPlusOneDigitQuestionsBuilder;
+        private readonly IQuestionsBuilder ninePlusOneDigitQuestionsBuilder;
+        private readonly IQuestionsBuilder eightPlusOneDigitQuestionsBuilder;
+        private readonly IQuestionsBuilder tenSubtractionQuestionBuilder;
+        private readonly IWorksheetBuilder worksheetBuilder;
 
         public Form1()
         {
+            this.excel = new Microsoft.Office.Interop.Excel.Application();
+            this.tenPlusOneDigitQuestionsBuilder = DuckBillContainer.Get<ITenPlusOneDigitQuestionBuilder>();
+            this.ninePlusOneDigitQuestionsBuilder = DuckBillContainer.Get<INinePlusOneDigitQuestionBuilder>();
+            this.eightPlusOneDigitQuestionsBuilder = DuckBillContainer.Get<IEightPlusOneDigitQuestionBuilder>();
+            this.tenSubtractionQuestionBuilder = DuckBillContainer.Get<ITenSubtractionQuestionBuilder>();
+            this.worksheetBuilder = DuckBillContainer.Get<IWorksheetBuilder>();
             InitializeComponent();
-        }
-
-        private void GenerateExcel_Click(object sender, EventArgs e)
-        {
-            var xlWorkSheet = (Worksheet) this.GenerateWorkBook().Worksheets[1];
-
-
-            // Select the Excel cells, in the range c1 to c7 in the worksheet.
-            Range aRange = xlWorkSheet.get_Range("C1", "C7");
-
-//            if (aRange == null)
-//            {
-//                MessageBox.Show(
-//                    "Could not get a range. Check to be sure you have the correct versions of the office DLLs.");
-//            }
-//
-//            xlWorkSheet.Cells[1, 1] = "ID";
-//            xlWorkSheet.Cells[1, 2] = "Name";
-//            xlWorkSheet.Cells[2, 1] = "1";
-//            xlWorkSheet.Cells[2, 2] = "One";
-//            xlWorkSheet.Cells[3, 1] = "2";
-//            xlWorkSheet.Cells[3, 2] = "Two";
-//
-//            xlWorkBook.SaveAs("e:\\test.xlsx");
         }
 
         private void Generate10AddXButton_Click(object sender, EventArgs e)
         {
-            var data = new GenerateTenAddOneDigitNumber().GenerateGroups(50);
-            var workbook = this.GenerateWorkBook();
-            var xlWorkSheet = (Worksheet) workbook.Worksheets[1];
+            var questions = this.tenPlusOneDigitQuestionsBuilder.Build(this.questionCountbox.Text.ToInt());
+            var excelbook = this.GenerateWorkBook();
 
-            if (xlWorkSheet == null)
-            {
-                return;
-            }
+            var sheet = this.worksheetBuilder.Build(questions, excelbook);
 
-            for (int index = 0; index < data.Length; index++)
-            {
-                xlWorkSheet.Cells[index + 1, 1] = data[index];
-            }
+            sheet.SaveAs("Howie10+.xlsx");
+            excelbook.Close();
+        }
 
-            xlWorkSheet.SaveAs("test3.xlsx");
-            workbook.Close();
+        private void Generate9AddXButton_Click(object sender, EventArgs e)
+        {
+            var questions = this.ninePlusOneDigitQuestionsBuilder.Build(this.questionCountbox.Text.ToInt());
+            var excelbook = this.GenerateWorkBook();
+
+            var sheet = this.worksheetBuilder.Build(questions, excelbook);
+
+            sheet.SaveAs("Howie9+.xlsx");
+            excelbook.Close();
+        }
+
+        private void Generate8AddXButton_Click(object sender, EventArgs e)
+        {
+            var questions = this.eightPlusOneDigitQuestionsBuilder.Build(this.questionCountbox.Text.ToInt());
+            var excelbook = this.GenerateWorkBook();
+
+            var sheet = this.worksheetBuilder.Build(questions, excelbook);
+
+            sheet.SaveAs("Howie8+.xlsx");
+            excelbook.Close();
         }
 
         private Workbook GenerateWorkBook()
         {
-            if (xlApp == null)
+            if (excel == null)
             {
                 MessageBox.Show("Excel is not properly installed!!");
                 return null;
             }
 
-            var xlWorkBook = xlApp.Workbooks.Add(XlWBATemplate.xlWBATWorksheet);
+            var xlWorkBook = excel.Workbooks.Add(XlWBATemplate.xlWBATWorksheet);
 
             var xlWorkSheet = (Worksheet) xlWorkBook.Worksheets[1];
 
@@ -86,6 +90,17 @@ namespace Howie_Math_Study
             }
 
             return xlWorkBook;
+        }
+
+        private void Generate10SubtractionXButton_Click(object sender, EventArgs e)
+        {
+            var questions = this.tenSubtractionQuestionBuilder.Build(this.questionCountbox.Text.ToInt());
+            var excelbook = this.GenerateWorkBook();
+
+            var sheet = this.worksheetBuilder.Build(questions, excelbook);
+
+            sheet.SaveAs("Howie10-.xlsx");
+            excelbook.Close();
         }
     }
 }
