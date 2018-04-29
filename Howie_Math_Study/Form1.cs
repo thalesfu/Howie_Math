@@ -14,8 +14,14 @@ namespace Howie_Math_Study
         private readonly IQuestionsBuilder tenPlusOneDigitQuestionsBuilder;
         private readonly IQuestionsBuilder ninePlusOneDigitQuestionsBuilder;
         private readonly IQuestionsBuilder eightPlusOneDigitQuestionsBuilder;
-        private readonly IQuestionsBuilder tenSubtractionQuestionBuilder;
+        private readonly IQuestionsBuilder sevenPlusXQuestionBuilder;
+        private readonly IQuestionsBuilder sixPlusXQuestionBuilder;
+        private readonly IQuestionsBuilder fivePlusXQuestionBuilder;
+        private readonly IQuestionsBuilder xZeroPlusYZeroQuestionBuilder;
+        private readonly IQuestionsBuilder tenSubtractionXQuestionBuilder;
         private readonly IWorksheetBuilder worksheetBuilder;
+
+        private readonly INow now;
 
         public Form1()
         {
@@ -23,8 +29,13 @@ namespace Howie_Math_Study
             this.tenPlusOneDigitQuestionsBuilder = DuckBillContainer.Get<ITenPlusOneDigitQuestionBuilder>();
             this.ninePlusOneDigitQuestionsBuilder = DuckBillContainer.Get<INinePlusOneDigitQuestionBuilder>();
             this.eightPlusOneDigitQuestionsBuilder = DuckBillContainer.Get<IEightPlusOneDigitQuestionBuilder>();
-            this.tenSubtractionQuestionBuilder = DuckBillContainer.Get<ITenSubtractionQuestionBuilder>();
+            this.sevenPlusXQuestionBuilder = DuckBillContainer.Get<ISevenPlusOneDigitQuestionBuilder>();
+            this.sixPlusXQuestionBuilder = DuckBillContainer.Get<ISixPlusOneDigitQuestionBuilder>();
+            this.fivePlusXQuestionBuilder = DuckBillContainer.Get<IFivePlusOneDigitQuestionBuilder>();
+            this.xZeroPlusYZeroQuestionBuilder = DuckBillContainer.Get<ITenPlusTenQuestionsBuilder>();
+            this.tenSubtractionXQuestionBuilder = DuckBillContainer.Get<ITenSubtractionQuestionBuilder>();
             this.worksheetBuilder = DuckBillContainer.Get<IWorksheetBuilder>();
+            this.now = DuckBillContainer.Get<INow>();
             InitializeComponent();
         }
 
@@ -35,7 +46,7 @@ namespace Howie_Math_Study
 
             var sheet = this.worksheetBuilder.Build(questions, excelbook);
 
-            sheet.SaveAs("Howie10+.xlsx");
+            sheet.SaveAs($"10+X_{this.now.DateTime.ToString("yyyyMMddhhmmss")}.xlsx");
             excelbook.Close();
         }
 
@@ -46,7 +57,7 @@ namespace Howie_Math_Study
 
             var sheet = this.worksheetBuilder.Build(questions, excelbook);
 
-            sheet.SaveAs("Howie9+.xlsx");
+            sheet.SaveAs($"9+X_{this.now.DateTime.ToString("yyyyMMddhhmmss")}.xlsx");
             excelbook.Close();
         }
 
@@ -57,7 +68,7 @@ namespace Howie_Math_Study
 
             var sheet = this.worksheetBuilder.Build(questions, excelbook);
 
-            sheet.SaveAs("Howie8+.xlsx");
+            sheet.SaveAs($"8+X_{this.now.DateTime.ToString("yyyyMMddhhmmss")}.xlsx");
             excelbook.Close();
         }
 
@@ -94,12 +105,56 @@ namespace Howie_Math_Study
 
         private void Generate10SubtractionXButton_Click(object sender, EventArgs e)
         {
-            var questions = this.tenSubtractionQuestionBuilder.Build(this.questionCountbox.Text.ToInt());
+            var questions = this.tenSubtractionXQuestionBuilder.Build(this.questionCountbox.Text.ToInt());
             var excelbook = this.GenerateWorkBook();
 
             var sheet = this.worksheetBuilder.Build(questions, excelbook);
 
-            sheet.SaveAs("Howie10-.xlsx");
+            sheet.SaveAs($"10-X_{this.now.DateTime.ToString("yyyyMMddhhmmss")}.xlsx");
+            excelbook.Close();
+        }
+
+        private void Generate7PlusXButton_Click(object sender, EventArgs e)
+        {
+            var questions = this.sevenPlusXQuestionBuilder.Build(this.questionCountbox.Text.ToInt());
+            var excelbook = this.GenerateWorkBook();
+
+            var sheet = this.worksheetBuilder.Build(questions, excelbook);
+
+            sheet.SaveAs($"7+X_{this.now.DateTime.ToString("yyyyMMddhhmmss")}.xlsx");
+            excelbook.Close();
+        }
+
+        private void Generate6PlusXButton_Click(object sender, EventArgs e)
+        {
+            var questions = this.sixPlusXQuestionBuilder.Build(this.questionCountbox.Text.ToInt());
+            var excelbook = this.GenerateWorkBook();
+
+            var sheet = this.worksheetBuilder.Build(questions, excelbook);
+
+            sheet.SaveAs($"6+X_{this.now.DateTime.ToString("yyyyMMddhhmmss")}.xlsx");
+            excelbook.Close();
+        }
+
+        private void Generate5PlusXButton_Click(object sender, EventArgs e)
+        {
+            var questions = this.fivePlusXQuestionBuilder.Build(this.questionCountbox.Text.ToInt());
+            var excelbook = this.GenerateWorkBook();
+
+            var sheet = this.worksheetBuilder.Build(questions, excelbook);
+
+            sheet.SaveAs($"5+X_{this.now.DateTime.ToString("yyyyMMddhhmmss")}.xlsx");
+            excelbook.Close();
+        }
+
+        private void GenerateX0PlusY0Button_Click(object sender, EventArgs e)
+        {
+            var questions = this.xZeroPlusYZeroQuestionBuilder.Build(this.questionCountbox.Text.ToInt());
+            var excelbook = this.GenerateWorkBook();
+
+            var sheet = this.worksheetBuilder.Build(questions, excelbook);
+
+            sheet.SaveAs($"X0+Y0_{this.now.DateTime.ToString("yyyyMMddhhmmss")}.xlsx");
             excelbook.Close();
         }
     }

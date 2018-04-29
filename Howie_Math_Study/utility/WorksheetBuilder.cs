@@ -79,7 +79,7 @@ namespace Howie_Math_Study.utility
             cell.RowHeight = 37.5;
             cell.Font.Size = 20;
             cell.Font.FontStyle = "Verdana";
-            cell.ColumnWidth = 14.75;
+            cell.ColumnWidth = 15.75;
         }
 
         private void SetResultCell(Range cell)
@@ -91,7 +91,7 @@ namespace Howie_Math_Study.utility
 
         private void SetSplitCell(Range cell)
         {
-            cell.ColumnWidth = 5;
+            cell.ColumnWidth = 3.5;
         }
     }
 }
