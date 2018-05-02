@@ -10,5 +10,15 @@ namespace Howie_Math_Study.questions
         protected BaseGroupsQuestionBuilder(IRandom rd) : base(rd)
         {
         }
+
+        protected override int GenerateB()
+        {
+            return this.GroupB[this.rd.Next(0, this.GroupB.Length)];
+        }
+
+        protected override int GenerateA()
+        {
+            return this.GroupA[this.rd.Next(0, this.GroupA.Length)];
+        }
     }
 }

@@ -28,31 +28,25 @@ namespace Howie_Math_Study
             this.excel = new Microsoft.Office.Interop.Excel.Application();
             this.questionBuilders = new Dictionary<string, IQuestionsBuilder>
             {
-                {"TenPlusXButton", DuckBillContainer.Get<ITenPlusXQuestionBuilder>()},
-                {"NinePlusXButton", DuckBillContainer.Get<INinePlusXQuestionBuilder>()},
-                {"EightPlusXButton", DuckBillContainer.Get<IEightPlusXQuestionBuilder>()},
-                {"SevenPlusXButton", DuckBillContainer.Get<ISevenPlusXQuestionBuilder>()},
-                {"SixPlusXButton", DuckBillContainer.Get<ISixPlusXQuestionBuilder>()},
-                {"FivePlusXButton", DuckBillContainer.Get<IFivePlusXQuestionBuilder>()},
+                {"XPlus10Button", DuckBillContainer.Get<IXPlus10QuestionBuilder>()},
+                {"XPlus9Button", DuckBillContainer.Get<IXPlus9QuestionBuilder>()},
+                {"XPlus8Button", DuckBillContainer.Get<IXPlus8QuestionBuilder>()},
+                {"XPlus7Button", DuckBillContainer.Get<IXPlus7QuestionBuilder>()},
+                {"XPlus6Button", DuckBillContainer.Get<IXPlus6QuestionBuilder>()},
+                {"XPlus5Button", DuckBillContainer.Get<IXPlus5QuestionBuilder>()},
+                {"XSubtraction3Button", DuckBillContainer.Get<IXSubtraction3QuestionBuilder>()},
+                {"XSubtraction4Button", DuckBillContainer.Get<IXSubtraction4QuestionBuilder>()},
+                {"XSubtraction5Button", DuckBillContainer.Get<IXSubtraction5QuestionBuilder>()},
+                {"SubractionWithNoBackButton", DuckBillContainer.Get<ISubractionWithNoBackQuestionBuilder>()},
                 {"X0PlusY0Button", DuckBillContainer.Get<IX0PlusY0QuestionsBuilder>()},
-                {"TenSubtractionXButton", DuckBillContainer.Get<ITenSubtractionXQuestionBuilder>()}
+                {"TenSubtractionXButton", DuckBillContainer.Get<ITenSubtractionXQuestionBuilder>()},
+                {"SubtractionLessThan10Button", DuckBillContainer.Get<ISubtractionLessThan10QuestionBuilder>()}
             };
 
 
             this.worksheetBuilder = DuckBillContainer.Get<IWorksheetBuilder>();
             this.now = DuckBillContainer.Get<INow>();
             InitializeComponent();
-        }
-
-        private void Generate10AddXButton_Click(object sender, EventArgs e)
-        {
-//            var questions = this.tenPlusOneDigitQuestionsBuilder.Build(this.questionCountbox.Text.ToInt());
-//            var excelbook = this.GenerateWorkBook();
-//
-//            var sheet = this.worksheetBuilder.Build(questions, excelbook);
-//
-//            sheet.SaveAs($"10+X_{this.now.DateTime.ToString("yyyyMMddhhmmss")}.xlsx");
-//            excelbook.Close();
         }
 
 
@@ -85,17 +79,6 @@ namespace Howie_Math_Study
             }
 
             return xlWorkBook;
-        }
-
-        private void Generate10SubtractionXButton_Click(object sender, EventArgs e)
-        {
-//            var questions = this.tenSubtractionXQuestionBuilder.Build(this.questionCountbox.Text.ToInt());
-//            var excelbook = this.GenerateWorkBook();
-//
-//            var sheet = this.worksheetBuilder.Build(questions, excelbook);
-//
-//            sheet.SaveAs($"10-X_{this.now.DateTime.ToString("yyyyMMddhhmmss")}.xlsx");
-//            excelbook.Close();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -198,7 +181,7 @@ namespace Howie_Math_Study
                 var perTypeQuestionCount = Math.Ceiling(pagesize / questionTypes.Length.ToDecimal()).ToInt();
 
                 questions.AddRange(questionTypes.SelectMany(type => type.Build(perTypeQuestionCount))
-                    .OrderBy(question => Guid.NewGuid()));
+                    .OrderBy(question => Guid.NewGuid()).Take(60));
             }
 
             return questions;

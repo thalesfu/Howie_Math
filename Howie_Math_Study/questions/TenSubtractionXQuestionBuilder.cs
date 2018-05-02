@@ -11,13 +11,9 @@ namespace Howie_Math_Study.questions
             this.GroupB = new[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
         }
 
-        public override string Build()
+        protected override string Format(int a, int b)
         {
-            var realA = this.GroupA[this.rd.Next(0, this.GroupA.Length)];
-            var realB = this.GroupB[this.rd.Next(0, this.GroupB.Length)];
-
-
-            return $"{realA} - {realB} = ";
+            return $"{a} - {b} = ";
         }
     }
 }

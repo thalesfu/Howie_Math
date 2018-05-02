@@ -9,14 +9,10 @@ namespace Howie_Math_Study.questions
         {
         }
 
-        public override string Build()
+        protected override string Format(int a, int b)
         {
             int realA;
             int realB;
-
-            var a = this.GroupA[this.rd.Next(0, this.GroupA.Length)];
-            var b = this.GroupB[this.rd.Next(0, this.GroupB.Length)];
-
             var reverse = this.rd.Next(0, 2) > 0;
 
             if (reverse)
