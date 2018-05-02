@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Microsoft.Office.Interop.Excel;
 
 namespace Howie_Math_Study.utility
 {
     internal class WorksheetBuilder : IWorksheetBuilder
     {
-        public Worksheet Build(string[] questions, Workbook excelBook)
+        public Worksheet Build(IEnumerable<string> questions, Workbook excelBook)
         {
             if (excelBook == null)
             {
@@ -53,7 +52,7 @@ namespace Howie_Math_Study.utility
             return sheet;
         }
 
-        public List<List<string>> GetPageGroup(string[] questions)
+        public List<List<string>> GetPageGroup(IEnumerable<string> questions)
         {
             var group = new List<List<string>>();
             var pageQuestions = new List<string>();

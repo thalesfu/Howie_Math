@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using Ctrip.Duckbill;
 using Ctrip.Duckbill.Extensions;
@@ -11,29 +14,31 @@ namespace Howie_Math_Study
     public partial class Form1 : Form
     {
         private readonly Microsoft.Office.Interop.Excel.Application excel;
-        private readonly IQuestionsBuilder tenPlusOneDigitQuestionsBuilder;
-        private readonly IQuestionsBuilder ninePlusOneDigitQuestionsBuilder;
-        private readonly IQuestionsBuilder eightPlusOneDigitQuestionsBuilder;
-        private readonly IQuestionsBuilder sevenPlusXQuestionBuilder;
-        private readonly IQuestionsBuilder sixPlusXQuestionBuilder;
-        private readonly IQuestionsBuilder fivePlusXQuestionBuilder;
-        private readonly IQuestionsBuilder xZeroPlusYZeroQuestionBuilder;
-        private readonly IQuestionsBuilder tenSubtractionXQuestionBuilder;
+
+        private readonly Dictionary<string, IQuestionsBuilder> questionBuilders;
+
         private readonly IWorksheetBuilder worksheetBuilder;
 
         private readonly INow now;
 
+        private const string Choice = "choice";
+
         public Form1()
         {
             this.excel = new Microsoft.Office.Interop.Excel.Application();
-            this.tenPlusOneDigitQuestionsBuilder = DuckBillContainer.Get<ITenPlusOneDigitQuestionBuilder>();
-            this.ninePlusOneDigitQuestionsBuilder = DuckBillContainer.Get<INinePlusOneDigitQuestionBuilder>();
-            this.eightPlusOneDigitQuestionsBuilder = DuckBillContainer.Get<IEightPlusOneDigitQuestionBuilder>();
-            this.sevenPlusXQuestionBuilder = DuckBillContainer.Get<ISevenPlusOneDigitQuestionBuilder>();
-            this.sixPlusXQuestionBuilder = DuckBillContainer.Get<ISixPlusOneDigitQuestionBuilder>();
-            this.fivePlusXQuestionBuilder = DuckBillContainer.Get<IFivePlusOneDigitQuestionBuilder>();
-            this.xZeroPlusYZeroQuestionBuilder = DuckBillContainer.Get<ITenPlusTenQuestionsBuilder>();
-            this.tenSubtractionXQuestionBuilder = DuckBillContainer.Get<ITenSubtractionQuestionBuilder>();
+            this.questionBuilders = new Dictionary<string, IQuestionsBuilder>
+            {
+                {"TenPlusXButton", DuckBillContainer.Get<ITenPlusXQuestionBuilder>()},
+                {"NinePlusXButton", DuckBillContainer.Get<INinePlusXQuestionBuilder>()},
+                {"EightPlusXButton", DuckBillContainer.Get<IEightPlusXQuestionBuilder>()},
+                {"SevenPlusXButton", DuckBillContainer.Get<ISevenPlusXQuestionBuilder>()},
+                {"SixPlusXButton", DuckBillContainer.Get<ISixPlusXQuestionBuilder>()},
+                {"FivePlusXButton", DuckBillContainer.Get<IFivePlusXQuestionBuilder>()},
+                {"X0PlusY0Button", DuckBillContainer.Get<IX0PlusY0QuestionsBuilder>()},
+                {"TenSubtractionXButton", DuckBillContainer.Get<ITenSubtractionXQuestionBuilder>()}
+            };
+
+
             this.worksheetBuilder = DuckBillContainer.Get<IWorksheetBuilder>();
             this.now = DuckBillContainer.Get<INow>();
             InitializeComponent();
@@ -41,36 +46,15 @@ namespace Howie_Math_Study
 
         private void Generate10AddXButton_Click(object sender, EventArgs e)
         {
-            var questions = this.tenPlusOneDigitQuestionsBuilder.Build(this.questionCountbox.Text.ToInt());
-            var excelbook = this.GenerateWorkBook();
-
-            var sheet = this.worksheetBuilder.Build(questions, excelbook);
-
-            sheet.SaveAs($"10+X_{this.now.DateTime.ToString("yyyyMMddhhmmss")}.xlsx");
-            excelbook.Close();
+//            var questions = this.tenPlusOneDigitQuestionsBuilder.Build(this.questionCountbox.Text.ToInt());
+//            var excelbook = this.GenerateWorkBook();
+//
+//            var sheet = this.worksheetBuilder.Build(questions, excelbook);
+//
+//            sheet.SaveAs($"10+X_{this.now.DateTime.ToString("yyyyMMddhhmmss")}.xlsx");
+//            excelbook.Close();
         }
 
-        private void Generate9AddXButton_Click(object sender, EventArgs e)
-        {
-            var questions = this.ninePlusOneDigitQuestionsBuilder.Build(this.questionCountbox.Text.ToInt());
-            var excelbook = this.GenerateWorkBook();
-
-            var sheet = this.worksheetBuilder.Build(questions, excelbook);
-
-            sheet.SaveAs($"9+X_{this.now.DateTime.ToString("yyyyMMddhhmmss")}.xlsx");
-            excelbook.Close();
-        }
-
-        private void Generate8AddXButton_Click(object sender, EventArgs e)
-        {
-            var questions = this.eightPlusOneDigitQuestionsBuilder.Build(this.questionCountbox.Text.ToInt());
-            var excelbook = this.GenerateWorkBook();
-
-            var sheet = this.worksheetBuilder.Build(questions, excelbook);
-
-            sheet.SaveAs($"8+X_{this.now.DateTime.ToString("yyyyMMddhhmmss")}.xlsx");
-            excelbook.Close();
-        }
 
         private Workbook GenerateWorkBook()
         {
@@ -105,57 +89,119 @@ namespace Howie_Math_Study
 
         private void Generate10SubtractionXButton_Click(object sender, EventArgs e)
         {
-            var questions = this.tenSubtractionXQuestionBuilder.Build(this.questionCountbox.Text.ToInt());
-            var excelbook = this.GenerateWorkBook();
+//            var questions = this.tenSubtractionXQuestionBuilder.Build(this.questionCountbox.Text.ToInt());
+//            var excelbook = this.GenerateWorkBook();
+//
+//            var sheet = this.worksheetBuilder.Build(questions, excelbook);
+//
+//            sheet.SaveAs($"10-X_{this.now.DateTime.ToString("yyyyMMddhhmmss")}.xlsx");
+//            excelbook.Close();
+        }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            foreach (Control control in this.questionPanel.Controls) //遍历Form上的所有控件  
+            {
+                var button = control as System.Windows.Forms.Button;
+
+                if (button == null)
+                {
+                    continue;
+                }
+
+                button.Click += SwitchButtonStatus;
+            }
+
+            this.PageCountControl.SelectedItem = "1";
+        }
+
+        private static void SwitchButtonStatus(object sender, EventArgs e)
+        {
+            var button = sender as System.Windows.Forms.Button;
+
+            if (button == null)
+            {
+                return;
+            }
+
+            if (button.Tag == null)
+            {
+                button.Tag = Choice;
+                button.BackColor = Color.FromKnownColor(KnownColor.ButtonShadow);
+            }
+            else
+            {
+                button.BackColor = Color.FromKnownColor(KnownColor.ControlLight);
+                button.Tag = null;
+            }
+        }
+
+        private void PrintButton_Click(object sender, EventArgs e)
+        {
+            var questions = this.GenerateQuestions();
+
+            var excelbook = this.GenerateWorkBook();
+            this.worksheetBuilder.Build(questions, excelbook);
+
+            excelbook.PrintOut();
+            excelbook.Close(false);
+        }
+
+        private void generateButton_Click(object sender, EventArgs e)
+        {
+            var questions = this.GenerateQuestions();
+
+            var excelbook = this.GenerateWorkBook();
             var sheet = this.worksheetBuilder.Build(questions, excelbook);
 
-            sheet.SaveAs($"10-X_{this.now.DateTime.ToString("yyyyMMddhhmmss")}.xlsx");
+            sheet.SaveAs($"Questions_{this.now.DateTime:yyyyMMddhhmmss}.xlsx");
+            MessageBox.Show($"文件已经保存到{excelbook.FullName}");
             excelbook.Close();
         }
 
-        private void Generate7PlusXButton_Click(object sender, EventArgs e)
+        private List<string> GenerateQuestions()
         {
-            var questions = this.sevenPlusXQuestionBuilder.Build(this.questionCountbox.Text.ToInt());
-            var excelbook = this.GenerateWorkBook();
+            var questions = new List<string>();
 
-            var sheet = this.worksheetBuilder.Build(questions, excelbook);
+            var questionTypes = this.questionPanel.Controls.Cast<Control>()
+                .Where(control =>
+                    control is System.Windows.Forms.Button && Choice.Equals(control.Tag) &&
+                    this.questionBuilders.ContainsKey(control.Name))
+                .Select(control => this.questionBuilders[control.Name])
+                .ToArray();
 
-            sheet.SaveAs($"7+X_{this.now.DateTime.ToString("yyyyMMddhhmmss")}.xlsx");
-            excelbook.Close();
-        }
+            if (questionTypes.Length == 0)
+            {
+                MessageBox.Show("没有选择任何题目");
+                return questions;
+            }
 
-        private void Generate6PlusXButton_Click(object sender, EventArgs e)
-        {
-            var questions = this.sixPlusXQuestionBuilder.Build(this.questionCountbox.Text.ToInt());
-            var excelbook = this.GenerateWorkBook();
+            var pagesize = this.PageSizeControl.Text.ToDecimal();
 
-            var sheet = this.worksheetBuilder.Build(questions, excelbook);
+            if (pagesize == decimal.Zero)
+            {
+                MessageBox.Show("每页数量为0");
+                return questions;
+            }
 
-            sheet.SaveAs($"6+X_{this.now.DateTime.ToString("yyyyMMddhhmmss")}.xlsx");
-            excelbook.Close();
-        }
+            var pagecount = this.PageCountControl.SelectedItem.ToInt();
 
-        private void Generate5PlusXButton_Click(object sender, EventArgs e)
-        {
-            var questions = this.fivePlusXQuestionBuilder.Build(this.questionCountbox.Text.ToInt());
-            var excelbook = this.GenerateWorkBook();
+            if (pagecount == 0)
+            {
+                MessageBox.Show("页数为0");
+                return questions;
+            }
 
-            var sheet = this.worksheetBuilder.Build(questions, excelbook);
 
-            sheet.SaveAs($"5+X_{this.now.DateTime.ToString("yyyyMMddhhmmss")}.xlsx");
-            excelbook.Close();
-        }
+            for (var page = 1; page <= pagecount; page++)
+            {
+                var perTypeQuestionCount = Math.Ceiling(pagesize / questionTypes.Length.ToDecimal()).ToInt();
 
-        private void GenerateX0PlusY0Button_Click(object sender, EventArgs e)
-        {
-            var questions = this.xZeroPlusYZeroQuestionBuilder.Build(this.questionCountbox.Text.ToInt());
-            var excelbook = this.GenerateWorkBook();
+                questions.AddRange(questionTypes.SelectMany(type => type.Build(perTypeQuestionCount))
+                    .OrderBy(question => Guid.NewGuid()));
+            }
 
-            var sheet = this.worksheetBuilder.Build(questions, excelbook);
-
-            sheet.SaveAs($"X0+Y0_{this.now.DateTime.ToString("yyyyMMddhhmmss")}.xlsx");
-            excelbook.Close();
+            return questions;
         }
     }
 }
