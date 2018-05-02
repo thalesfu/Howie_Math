@@ -128,6 +128,7 @@ namespace Howie_Math_Study
 
             excelbook.PrintOut();
             excelbook.Close(false);
+            MessageBox.Show("以提交打印");
         }
 
         private void generateButton_Click(object sender, EventArgs e)
