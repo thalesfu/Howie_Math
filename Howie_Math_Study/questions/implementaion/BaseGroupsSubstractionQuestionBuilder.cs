@@ -1,6 +1,6 @@
 using Howie_Math_Study.utility;
 
-namespace Howie_Math_Study.questions
+namespace Howie_Math_Study.questions.implementaion
 {
     public class BaseGroupsSubstractionQuestionBuilder : BaseGroupsQuestionBuilder
     {

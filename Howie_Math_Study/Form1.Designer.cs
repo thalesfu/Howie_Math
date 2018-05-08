@@ -39,22 +39,23 @@
             this.FivePlusXButton = new System.Windows.Forms.Button();
             this.X0PlusY0Button = new System.Windows.Forms.Button();
             this.questionPanel = new System.Windows.Forms.Panel();
+            this.XSubtraction5Button = new System.Windows.Forms.Button();
+            this.XSubtraction4Button = new System.Windows.Forms.Button();
+            this.XSubtraction3Button = new System.Windows.Forms.Button();
+            this.SubractionWithNoBackButton = new System.Windows.Forms.Button();
+            this.SubtractionLessThan10Button = new System.Windows.Forms.Button();
             this.PageCountControl = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.printButton = new System.Windows.Forms.Button();
             this.generateButton = new System.Windows.Forms.Button();
-            this.SubtractionLessThan10Button = new System.Windows.Forms.Button();
-            this.SubractionWithNoBackButton = new System.Windows.Forms.Button();
-            this.XSubtraction3Button = new System.Windows.Forms.Button();
-            this.XSubtraction4Button = new System.Windows.Forms.Button();
-            this.XSubtraction5Button = new System.Windows.Forms.Button();
+            this.XPlusYEqualsTenButton = new System.Windows.Forms.Button();
             this.questionPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // TenPlusXButton
             // 
             this.TenPlusXButton.Location = new System.Drawing.Point(14, 17);
-            this.TenPlusXButton.Name = "XPlus10Button";
+            this.TenPlusXButton.Name = "TenPlusXButton";
             this.TenPlusXButton.Size = new System.Drawing.Size(108, 31);
             this.TenPlusXButton.TabIndex = 1;
             this.TenPlusXButton.Text = "10+X";
@@ -81,7 +82,7 @@
             // NinePlusXButton
             // 
             this.NinePlusXButton.Location = new System.Drawing.Point(134, 17);
-            this.NinePlusXButton.Name = "XPlus9Button";
+            this.NinePlusXButton.Name = "NinePlusXButton";
             this.NinePlusXButton.Size = new System.Drawing.Size(108, 31);
             this.NinePlusXButton.TabIndex = 4;
             this.NinePlusXButton.Text = "9+X";
@@ -91,7 +92,7 @@
             // 
             this.EightPlusXButton.AllowDrop = true;
             this.EightPlusXButton.Location = new System.Drawing.Point(254, 17);
-            this.EightPlusXButton.Name = "XPlus8Button";
+            this.EightPlusXButton.Name = "EightPlusXButton";
             this.EightPlusXButton.Size = new System.Drawing.Size(108, 31);
             this.EightPlusXButton.TabIndex = 5;
             this.EightPlusXButton.Text = "8+X";
@@ -109,7 +110,7 @@
             // SevenPlusXButton
             // 
             this.SevenPlusXButton.Location = new System.Drawing.Point(374, 17);
-            this.SevenPlusXButton.Name = "XPlus7Button";
+            this.SevenPlusXButton.Name = "SevenPlusXButton";
             this.SevenPlusXButton.Size = new System.Drawing.Size(108, 31);
             this.SevenPlusXButton.TabIndex = 7;
             this.SevenPlusXButton.Text = "7+X";
@@ -118,7 +119,7 @@
             // SixPlusXButton
             // 
             this.SixPlusXButton.Location = new System.Drawing.Point(494, 17);
-            this.SixPlusXButton.Name = "XPlus6Button";
+            this.SixPlusXButton.Name = "SixPlusXButton";
             this.SixPlusXButton.Size = new System.Drawing.Size(108, 31);
             this.SixPlusXButton.TabIndex = 8;
             this.SixPlusXButton.Text = "6+X";
@@ -127,7 +128,7 @@
             // FivePlusXButton
             // 
             this.FivePlusXButton.Location = new System.Drawing.Point(614, 17);
-            this.FivePlusXButton.Name = "XPlus5Button";
+            this.FivePlusXButton.Name = "FivePlusXButton";
             this.FivePlusXButton.Size = new System.Drawing.Size(108, 31);
             this.FivePlusXButton.TabIndex = 9;
             this.FivePlusXButton.Text = "5+X";
@@ -144,6 +145,7 @@
             // 
             // questionPanel
             // 
+            this.questionPanel.Controls.Add(this.XPlusYEqualsTenButton);
             this.questionPanel.Controls.Add(this.XSubtraction5Button);
             this.questionPanel.Controls.Add(this.XSubtraction4Button);
             this.questionPanel.Controls.Add(this.XSubtraction3Button);
@@ -161,6 +163,54 @@
             this.questionPanel.Name = "questionPanel";
             this.questionPanel.Size = new System.Drawing.Size(737, 301);
             this.questionPanel.TabIndex = 13;
+            // 
+            // XSubtraction5Button
+            // 
+            this.XSubtraction5Button.AllowDrop = true;
+            this.XSubtraction5Button.Location = new System.Drawing.Point(614, 65);
+            this.XSubtraction5Button.Name = "XSubtraction5Button";
+            this.XSubtraction5Button.Size = new System.Drawing.Size(108, 31);
+            this.XSubtraction5Button.TabIndex = 15;
+            this.XSubtraction5Button.Text = "X-5";
+            this.XSubtraction5Button.UseVisualStyleBackColor = true;
+            // 
+            // XSubtraction4Button
+            // 
+            this.XSubtraction4Button.AllowDrop = true;
+            this.XSubtraction4Button.Location = new System.Drawing.Point(494, 65);
+            this.XSubtraction4Button.Name = "XSubtraction4Button";
+            this.XSubtraction4Button.Size = new System.Drawing.Size(108, 31);
+            this.XSubtraction4Button.TabIndex = 14;
+            this.XSubtraction4Button.Text = "X-4";
+            this.XSubtraction4Button.UseVisualStyleBackColor = true;
+            // 
+            // XSubtraction3Button
+            // 
+            this.XSubtraction3Button.AllowDrop = true;
+            this.XSubtraction3Button.Location = new System.Drawing.Point(374, 65);
+            this.XSubtraction3Button.Name = "XSubtraction3Button";
+            this.XSubtraction3Button.Size = new System.Drawing.Size(108, 31);
+            this.XSubtraction3Button.TabIndex = 13;
+            this.XSubtraction3Button.Text = "X-3";
+            this.XSubtraction3Button.UseVisualStyleBackColor = true;
+            // 
+            // SubractionWithNoBackButton
+            // 
+            this.SubractionWithNoBackButton.Location = new System.Drawing.Point(374, 162);
+            this.SubractionWithNoBackButton.Name = "SubractionWithNoBackButton";
+            this.SubractionWithNoBackButton.Size = new System.Drawing.Size(108, 31);
+            this.SubractionWithNoBackButton.TabIndex = 12;
+            this.SubractionWithNoBackButton.Text = "不退位减法";
+            this.SubractionWithNoBackButton.UseVisualStyleBackColor = true;
+            // 
+            // SubtractionLessThan10Button
+            // 
+            this.SubtractionLessThan10Button.Location = new System.Drawing.Point(254, 162);
+            this.SubtractionLessThan10Button.Name = "SubtractionLessThan10Button";
+            this.SubtractionLessThan10Button.Size = new System.Drawing.Size(108, 31);
+            this.SubtractionLessThan10Button.TabIndex = 11;
+            this.SubtractionLessThan10Button.Text = "小于10的减法";
+            this.SubtractionLessThan10Button.UseVisualStyleBackColor = true;
             // 
             // PageCountControl
             // 
@@ -210,53 +260,14 @@
             this.generateButton.UseVisualStyleBackColor = true;
             this.generateButton.Click += new System.EventHandler(this.generateButton_Click);
             // 
-            // SubtractionLessThan10Button
+            // XPlusYEqualsTenButton
             // 
-            this.SubtractionLessThan10Button.Location = new System.Drawing.Point(134, 162);
-            this.SubtractionLessThan10Button.Name = "SubtractionLessThan10Button";
-            this.SubtractionLessThan10Button.Size = new System.Drawing.Size(108, 31);
-            this.SubtractionLessThan10Button.TabIndex = 11;
-            this.SubtractionLessThan10Button.Text = "小于10的减法";
-            this.SubtractionLessThan10Button.UseVisualStyleBackColor = true;
-            // 
-            // SubractionWithNoBackButton
-            // 
-            this.SubractionWithNoBackButton.Location = new System.Drawing.Point(254, 162);
-            this.SubractionWithNoBackButton.Name = "SubractionWithNoBackButton";
-            this.SubractionWithNoBackButton.Size = new System.Drawing.Size(108, 31);
-            this.SubractionWithNoBackButton.TabIndex = 12;
-            this.SubractionWithNoBackButton.Text = "不退位减法";
-            this.SubractionWithNoBackButton.UseVisualStyleBackColor = true;
-            // 
-            // XSubtraction3Button
-            // 
-            this.XSubtraction3Button.AllowDrop = true;
-            this.XSubtraction3Button.Location = new System.Drawing.Point(374, 65);
-            this.XSubtraction3Button.Name = "XSubtraction3Button";
-            this.XSubtraction3Button.Size = new System.Drawing.Size(108, 31);
-            this.XSubtraction3Button.TabIndex = 13;
-            this.XSubtraction3Button.Text = "X-3";
-            this.XSubtraction3Button.UseVisualStyleBackColor = true;
-            // 
-            // XSubtraction4Button
-            // 
-            this.XSubtraction4Button.AllowDrop = true;
-            this.XSubtraction4Button.Location = new System.Drawing.Point(494, 65);
-            this.XSubtraction4Button.Name = "XSubtraction4Button";
-            this.XSubtraction4Button.Size = new System.Drawing.Size(108, 31);
-            this.XSubtraction4Button.TabIndex = 14;
-            this.XSubtraction4Button.Text = "X-4";
-            this.XSubtraction4Button.UseVisualStyleBackColor = true;
-            // 
-            // XSubtraction5Button
-            // 
-            this.XSubtraction5Button.AllowDrop = true;
-            this.XSubtraction5Button.Location = new System.Drawing.Point(614, 65);
-            this.XSubtraction5Button.Name = "XSubtraction5Button";
-            this.XSubtraction5Button.Size = new System.Drawing.Size(108, 31);
-            this.XSubtraction5Button.TabIndex = 15;
-            this.XSubtraction5Button.Text = "X-5";
-            this.XSubtraction5Button.UseVisualStyleBackColor = true;
+            this.XPlusYEqualsTenButton.Location = new System.Drawing.Point(134, 162);
+            this.XPlusYEqualsTenButton.Name = "XPlusYEqualsTenButton";
+            this.XPlusYEqualsTenButton.Size = new System.Drawing.Size(108, 31);
+            this.XPlusYEqualsTenButton.TabIndex = 16;
+            this.XPlusYEqualsTenButton.Text = "好朋友数加法";
+            this.XPlusYEqualsTenButton.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -300,6 +311,7 @@
         private System.Windows.Forms.Button XSubtraction3Button;
         private System.Windows.Forms.Button XSubtraction5Button;
         private System.Windows.Forms.Button XSubtraction4Button;
+        private System.Windows.Forms.Button XPlusYEqualsTenButton;
     }
 }
 

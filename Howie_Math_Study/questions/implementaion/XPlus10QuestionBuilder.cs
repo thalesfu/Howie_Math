@@ -1,8 +1,6 @@
-﻿using System;
-using System.Linq;
-using Howie_Math_Study.utility;
+﻿using Howie_Math_Study.utility;
 
-namespace Howie_Math_Study.questions
+namespace Howie_Math_Study.questions.implementaion
 {
     public class XPlus10QuestionBuilder : BaseGroupsAddQuestionBuilder,IXPlus10QuestionBuilder
     {

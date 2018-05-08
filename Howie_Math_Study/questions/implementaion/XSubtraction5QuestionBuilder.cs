@@ -1,6 +1,6 @@
 ﻿using Howie_Math_Study.utility;
 
-namespace Howie_Math_Study.questions
+namespace Howie_Math_Study.questions.implementaion
 {
     internal class XSubtraction5QuestionBuilder : BaseGroupsSubstractionQuestionBuilder, IXSubtraction5QuestionBuilder
     {

@@ -28,26 +28,24 @@ namespace Howie_Math_Study.utility
             {
                 foreach (var question in page)
                 {
-                    if (columnIndex > 8)
+                    if (columnIndex > 5)
                     {
                         rowIndex++;
                         columnIndex = 1;
                     }
 
                     sheet.Cells[rowIndex, columnIndex] = question;
-                    this.SetTopicCell((Range) sheet.Cells[rowIndex, columnIndex]);
-                    this.SetResultCell((Range) sheet.Cells[rowIndex, columnIndex + 1]);
+                    this.SetTopicCell(sheet.Cells[rowIndex, columnIndex] as Range);
 
-
-                    columnIndex = columnIndex + 3;
+                    columnIndex = columnIndex + 2;
                 }
 
                 rowIndex = rowIndex + 6;
             }
 
 
-            this.SetSplitCell((Range) sheet.Cells[1, 3]);
-            this.SetSplitCell((Range) sheet.Cells[1, 6]);
+            this.SetSplitCell(sheet.Cells[1, 2] as Range);
+            this.SetSplitCell(sheet.Cells[1, 4] as Range);
 
             return sheet;
         }
@@ -78,14 +76,8 @@ namespace Howie_Math_Study.utility
             cell.RowHeight = 37.5;
             cell.Font.Size = 20;
             cell.Font.FontStyle = "Verdana";
-            cell.ColumnWidth = 15.75;
-        }
-
-        private void SetResultCell(Range cell)
-        {
-            cell.Borders.LineStyle = 1;
-            cell.Borders.get_Item(XlBordersIndex.xlEdgeTop).LineStyle = XlLineStyle.xlContinuous;
-            cell.Borders.get_Item(XlBordersIndex.xlEdgeBottom).Weight = XlBorderWeight.xlThin;
+            cell.ColumnWidth = 24;
+            cell.HorizontalAlignment = 4;
         }
 
         private void SetSplitCell(Range cell)

@@ -1,6 +1,6 @@
 ﻿using Howie_Math_Study.utility;
 
-namespace Howie_Math_Study.questions
+namespace Howie_Math_Study.questions.implementaion
 {
     public class TenSubtractionXQuestionBuilder : BaseGroupsQuestionBuilder, ITenSubtractionXQuestionBuilder
     {
@@ -13,7 +13,7 @@ namespace Howie_Math_Study.questions
 
         protected override string Format(int a, int b)
         {
-            return $"{a} - {b} = ";
+            return $"{a} - {b} = ______";
         }
     }
 }

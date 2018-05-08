@@ -1,7 +1,6 @@
-﻿using System;
-using Howie_Math_Study.utility;
+﻿using Howie_Math_Study.utility;
 
-namespace Howie_Math_Study.questions
+namespace Howie_Math_Study.questions.implementaion
 {
     internal class SubtractionLessThan10QuestionBuilder : BaseQuestionBuilder, ISubtractionLessThan10QuestionBuilder
     {
@@ -11,7 +10,7 @@ namespace Howie_Math_Study.questions
 
         protected override string Format(int a, int b)
         {
-            return $"{a} - {b} = ";
+            return $"{a} - {b} = ______";
         }
 
         protected override int GenerateA()

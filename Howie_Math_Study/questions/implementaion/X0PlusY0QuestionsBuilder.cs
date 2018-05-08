@@ -1,6 +1,6 @@
 using Howie_Math_Study.utility;
 
-namespace Howie_Math_Study.questions
+namespace Howie_Math_Study.questions.implementaion
 {
     internal class X0PlusY0QuestionsBuilder : BaseGroupsAddQuestionBuilder, IX0PlusY0QuestionsBuilder
     {

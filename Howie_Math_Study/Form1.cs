@@ -40,6 +40,7 @@ namespace Howie_Math_Study
                 {"SubractionWithNoBackButton", DuckBillContainer.Get<ISubractionWithNoBackQuestionBuilder>()},
                 {"X0PlusY0Button", DuckBillContainer.Get<IX0PlusY0QuestionsBuilder>()},
                 {"TenSubtractionXButton", DuckBillContainer.Get<ITenSubtractionXQuestionBuilder>()},
+                {"XPlusYEqualsTenButton", DuckBillContainer.Get<IXPlusYEqualsTenQuestionBuilder>()},
                 {"SubtractionLessThan10Button", DuckBillContainer.Get<ISubtractionLessThan10QuestionBuilder>()}
             };
 
@@ -128,7 +129,7 @@ namespace Howie_Math_Study
 
             excelbook.PrintOut();
             excelbook.Close(false);
-            MessageBox.Show("以提交打印");
+            MessageBox.Show("已提交打印");
         }
 
         private void generateButton_Click(object sender, EventArgs e)
@@ -139,8 +140,10 @@ namespace Howie_Math_Study
             var sheet = this.worksheetBuilder.Build(questions, excelbook);
 
             sheet.SaveAs($"Questions_{this.now.DateTime:yyyyMMddhhmmss}.xlsx");
-            MessageBox.Show($"文件已经保存到{excelbook.FullName}");
+            var fileName = excelbook.FullName;
             excelbook.Close();
+
+            MessageBox.Show($"文件已经保存到{fileName}");
         }
 
         private List<string> GenerateQuestions()
