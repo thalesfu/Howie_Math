@@ -39,6 +39,7 @@
             this.FivePlusXButton = new System.Windows.Forms.Button();
             this.X0PlusY0Button = new System.Windows.Forms.Button();
             this.questionPanel = new System.Windows.Forms.Panel();
+            this.XPlusYEqualsTenButton = new System.Windows.Forms.Button();
             this.XSubtraction5Button = new System.Windows.Forms.Button();
             this.XSubtraction4Button = new System.Windows.Forms.Button();
             this.XSubtraction3Button = new System.Windows.Forms.Button();
@@ -48,7 +49,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.printButton = new System.Windows.Forms.Button();
             this.generateButton = new System.Windows.Forms.Button();
-            this.XPlusYEqualsTenButton = new System.Windows.Forms.Button();
+            this.XPlusYButton = new System.Windows.Forms.Button();
+            this.XaPlusYNotCarryButton = new System.Windows.Forms.Button();
+            this.XaPlusYbNotCarryButton = new System.Windows.Forms.Button();
+            this.XaPlusYCarryButton = new System.Windows.Forms.Button();
+            this.XaPlusYbCarryAndLessThen100Button = new System.Windows.Forms.Button();
+            this.XPlusYLessThen100Button = new System.Windows.Forms.Button();
             this.questionPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,7 +106,7 @@
             // 
             // TenSubtractionXButton
             // 
-            this.TenSubtractionXButton.Location = new System.Drawing.Point(14, 162);
+            this.TenSubtractionXButton.Location = new System.Drawing.Point(14, 229);
             this.TenSubtractionXButton.Name = "TenSubtractionXButton";
             this.TenSubtractionXButton.Size = new System.Drawing.Size(108, 31);
             this.TenSubtractionXButton.TabIndex = 6;
@@ -136,7 +142,7 @@
             // 
             // X0PlusY0Button
             // 
-            this.X0PlusY0Button.Location = new System.Drawing.Point(14, 105);
+            this.X0PlusY0Button.Location = new System.Drawing.Point(14, 176);
             this.X0PlusY0Button.Name = "X0PlusY0Button";
             this.X0PlusY0Button.Size = new System.Drawing.Size(108, 31);
             this.X0PlusY0Button.TabIndex = 10;
@@ -145,6 +151,12 @@
             // 
             // questionPanel
             // 
+            this.questionPanel.Controls.Add(this.XPlusYLessThen100Button);
+            this.questionPanel.Controls.Add(this.XaPlusYbCarryAndLessThen100Button);
+            this.questionPanel.Controls.Add(this.XaPlusYCarryButton);
+            this.questionPanel.Controls.Add(this.XaPlusYbNotCarryButton);
+            this.questionPanel.Controls.Add(this.XaPlusYNotCarryButton);
+            this.questionPanel.Controls.Add(this.XPlusYButton);
             this.questionPanel.Controls.Add(this.XPlusYEqualsTenButton);
             this.questionPanel.Controls.Add(this.XSubtraction5Button);
             this.questionPanel.Controls.Add(this.XSubtraction4Button);
@@ -164,10 +176,19 @@
             this.questionPanel.Size = new System.Drawing.Size(737, 301);
             this.questionPanel.TabIndex = 13;
             // 
+            // XPlusYEqualsTenButton
+            // 
+            this.XPlusYEqualsTenButton.Location = new System.Drawing.Point(134, 231);
+            this.XPlusYEqualsTenButton.Name = "XPlusYEqualsTenButton";
+            this.XPlusYEqualsTenButton.Size = new System.Drawing.Size(108, 31);
+            this.XPlusYEqualsTenButton.TabIndex = 16;
+            this.XPlusYEqualsTenButton.Text = "好朋友数加法";
+            this.XPlusYEqualsTenButton.UseVisualStyleBackColor = true;
+            // 
             // XSubtraction5Button
             // 
             this.XSubtraction5Button.AllowDrop = true;
-            this.XSubtraction5Button.Location = new System.Drawing.Point(614, 65);
+            this.XSubtraction5Button.Location = new System.Drawing.Point(614, 70);
             this.XSubtraction5Button.Name = "XSubtraction5Button";
             this.XSubtraction5Button.Size = new System.Drawing.Size(108, 31);
             this.XSubtraction5Button.TabIndex = 15;
@@ -177,7 +198,7 @@
             // XSubtraction4Button
             // 
             this.XSubtraction4Button.AllowDrop = true;
-            this.XSubtraction4Button.Location = new System.Drawing.Point(494, 65);
+            this.XSubtraction4Button.Location = new System.Drawing.Point(494, 70);
             this.XSubtraction4Button.Name = "XSubtraction4Button";
             this.XSubtraction4Button.Size = new System.Drawing.Size(108, 31);
             this.XSubtraction4Button.TabIndex = 14;
@@ -187,7 +208,7 @@
             // XSubtraction3Button
             // 
             this.XSubtraction3Button.AllowDrop = true;
-            this.XSubtraction3Button.Location = new System.Drawing.Point(374, 65);
+            this.XSubtraction3Button.Location = new System.Drawing.Point(374, 70);
             this.XSubtraction3Button.Name = "XSubtraction3Button";
             this.XSubtraction3Button.Size = new System.Drawing.Size(108, 31);
             this.XSubtraction3Button.TabIndex = 13;
@@ -196,7 +217,7 @@
             // 
             // SubractionWithNoBackButton
             // 
-            this.SubractionWithNoBackButton.Location = new System.Drawing.Point(374, 162);
+            this.SubractionWithNoBackButton.Location = new System.Drawing.Point(374, 231);
             this.SubractionWithNoBackButton.Name = "SubractionWithNoBackButton";
             this.SubractionWithNoBackButton.Size = new System.Drawing.Size(108, 31);
             this.SubractionWithNoBackButton.TabIndex = 12;
@@ -205,7 +226,7 @@
             // 
             // SubtractionLessThan10Button
             // 
-            this.SubtractionLessThan10Button.Location = new System.Drawing.Point(254, 162);
+            this.SubtractionLessThan10Button.Location = new System.Drawing.Point(254, 231);
             this.SubtractionLessThan10Button.Name = "SubtractionLessThan10Button";
             this.SubtractionLessThan10Button.Size = new System.Drawing.Size(108, 31);
             this.SubtractionLessThan10Button.TabIndex = 11;
@@ -260,14 +281,59 @@
             this.generateButton.UseVisualStyleBackColor = true;
             this.generateButton.Click += new System.EventHandler(this.generateButton_Click);
             // 
-            // XPlusYEqualsTenButton
+            // XPlusYButton
             // 
-            this.XPlusYEqualsTenButton.Location = new System.Drawing.Point(134, 162);
-            this.XPlusYEqualsTenButton.Name = "XPlusYEqualsTenButton";
-            this.XPlusYEqualsTenButton.Size = new System.Drawing.Size(108, 31);
-            this.XPlusYEqualsTenButton.TabIndex = 16;
-            this.XPlusYEqualsTenButton.Text = "好朋友数加法";
-            this.XPlusYEqualsTenButton.UseVisualStyleBackColor = true;
+            this.XPlusYButton.Location = new System.Drawing.Point(14, 123);
+            this.XPlusYButton.Name = "XPlusYButton";
+            this.XPlusYButton.Size = new System.Drawing.Size(108, 31);
+            this.XPlusYButton.TabIndex = 17;
+            this.XPlusYButton.Text = "X+Y";
+            this.XPlusYButton.UseVisualStyleBackColor = true;
+            // 
+            // XaPlusYNotCarryButton
+            // 
+            this.XaPlusYNotCarryButton.Location = new System.Drawing.Point(134, 176);
+            this.XaPlusYNotCarryButton.Name = "XaPlusYNotCarryButton";
+            this.XaPlusYNotCarryButton.Size = new System.Drawing.Size(108, 31);
+            this.XaPlusYNotCarryButton.TabIndex = 18;
+            this.XaPlusYNotCarryButton.Text = "XA+Y不进位";
+            this.XaPlusYNotCarryButton.UseVisualStyleBackColor = true;
+            // 
+            // XaPlusYbNotCarryButton
+            // 
+            this.XaPlusYbNotCarryButton.Location = new System.Drawing.Point(254, 176);
+            this.XaPlusYbNotCarryButton.Name = "XaPlusYbNotCarryButton";
+            this.XaPlusYbNotCarryButton.Size = new System.Drawing.Size(108, 31);
+            this.XaPlusYbNotCarryButton.TabIndex = 19;
+            this.XaPlusYbNotCarryButton.Text = "XA+YB不进位";
+            this.XaPlusYbNotCarryButton.UseVisualStyleBackColor = true;
+            // 
+            // XaPlusYCarryButton
+            // 
+            this.XaPlusYCarryButton.Location = new System.Drawing.Point(374, 176);
+            this.XaPlusYCarryButton.Name = "XaPlusYCarryButton";
+            this.XaPlusYCarryButton.Size = new System.Drawing.Size(108, 31);
+            this.XaPlusYCarryButton.TabIndex = 20;
+            this.XaPlusYCarryButton.Text = "XA+Y进位";
+            this.XaPlusYCarryButton.UseVisualStyleBackColor = true;
+            // 
+            // XaPlusYbCarryAndLessThen100Button
+            // 
+            this.XaPlusYbCarryAndLessThen100Button.Location = new System.Drawing.Point(494, 176);
+            this.XaPlusYbCarryAndLessThen100Button.Name = "XaPlusYbCarryAndLessThen100Button";
+            this.XaPlusYbCarryAndLessThen100Button.Size = new System.Drawing.Size(108, 31);
+            this.XaPlusYbCarryAndLessThen100Button.TabIndex = 21;
+            this.XaPlusYbCarryAndLessThen100Button.Text = "100内XA+YB进位";
+            this.XaPlusYbCarryAndLessThen100Button.UseVisualStyleBackColor = true;
+            // 
+            // XPlusYLessThen100Button
+            // 
+            this.XPlusYLessThen100Button.Location = new System.Drawing.Point(614, 176);
+            this.XPlusYLessThen100Button.Name = "XPlusYLessThen100Button";
+            this.XPlusYLessThen100Button.Size = new System.Drawing.Size(108, 31);
+            this.XPlusYLessThen100Button.TabIndex = 22;
+            this.XPlusYLessThen100Button.Text = "100内加法";
+            this.XPlusYLessThen100Button.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -312,6 +378,12 @@
         private System.Windows.Forms.Button XSubtraction5Button;
         private System.Windows.Forms.Button XSubtraction4Button;
         private System.Windows.Forms.Button XPlusYEqualsTenButton;
+        private System.Windows.Forms.Button XPlusYButton;
+        private System.Windows.Forms.Button XaPlusYNotCarryButton;
+        private System.Windows.Forms.Button XaPlusYbNotCarryButton;
+        private System.Windows.Forms.Button XaPlusYCarryButton;
+        private System.Windows.Forms.Button XaPlusYbCarryAndLessThen100Button;
+        private System.Windows.Forms.Button XPlusYLessThen100Button;
     }
 }
 
