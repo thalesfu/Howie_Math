@@ -2,20 +2,15 @@
 
 namespace Howie_Math_Study.questions.implementaion
 {
-    internal class SubractionWithNoBackQuestionBuilder : BaseQuestionBuilder, ISubractionWithNoBackQuestionBuilder
+    internal class XaSubractionYWithNoBackQuestionBuilder : BaseSubstractionQuestionBuilder, IXaSubractionYWithNoBackQuestionBuilder
     {
-        public SubractionWithNoBackQuestionBuilder(IRandom rd) : base(rd)
+        public XaSubractionYWithNoBackQuestionBuilder(IRandom rd) : base(rd)
         {
-        }
-
-        protected override string Format(int a, int b)
-        {
-            return $"{a} - {b} = ______";
         }
 
         protected override int GenerateA()
         {
-            return this.rd.Next(0, 100);
+            return this.rd.Next(11, 100);
         }
 
         protected override int GenerateB()

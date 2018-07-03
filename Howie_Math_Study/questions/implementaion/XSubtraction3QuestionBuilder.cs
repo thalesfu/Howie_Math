@@ -2,7 +2,7 @@
 
 namespace Howie_Math_Study.questions.implementaion
 {
-    internal class XSubtraction3QuestionBuilder : BaseGroupsSubstractionQuestionBuilder, IXSubtraction3QuestionBuilder
+    internal class XSubtraction3QuestionBuilder : BaseSubstractionQuestionBuilder, IXSubtraction3QuestionBuilder
     {
         public XSubtraction3QuestionBuilder(IRandom rd) : base(rd)
         {

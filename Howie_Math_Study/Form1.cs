@@ -38,16 +38,26 @@ namespace Howie_Math_Study
                 {"XaPlusYNotCarryButton", DuckBillContainer.Get<IXaPlusYNotCarryQuestionsBuilder>()},
                 {"XaPlusYbNotCarryButton", DuckBillContainer.Get<IXaPlusYbNotCarryQuestionsBuilder>()},
                 {"XaPlusYCarryButton", DuckBillContainer.Get<IXaPlusYCarryQuestionsBuilder>()},
-                {"XaPlusYbCarryAndLessThen100Button", DuckBillContainer.Get<IXaPlusYbCarryAndLessThen100QuestionsBuilder>()},
+                {
+                    "XaPlusYbCarryAndLessThen100Button",
+                    DuckBillContainer.Get<IXaPlusYbCarryAndLessThen100QuestionsBuilder>()
+                },
                 {"XPlusYLessThen100Button", DuckBillContainer.Get<IXPlusYLessThen100QuestionsBuilder>()},
                 {"XSubtraction3Button", DuckBillContainer.Get<IXSubtraction3QuestionBuilder>()},
                 {"XSubtraction4Button", DuckBillContainer.Get<IXSubtraction4QuestionBuilder>()},
                 {"XSubtraction5Button", DuckBillContainer.Get<IXSubtraction5QuestionBuilder>()},
-                {"SubractionWithNoBackButton", DuckBillContainer.Get<ISubractionWithNoBackQuestionBuilder>()},
                 {"X0PlusY0Button", DuckBillContainer.Get<IX0PlusY0QuestionsBuilder>()},
                 {"TenSubtractionXButton", DuckBillContainer.Get<ITenSubtractionXQuestionBuilder>()},
                 {"XPlusYEqualsTenButton", DuckBillContainer.Get<IXPlusYEqualsTenQuestionBuilder>()},
-                {"SubtractionLessThan10Button", DuckBillContainer.Get<ISubtractionLessThan10QuestionBuilder>()}
+                {"XSubtractionYLessThan10Button", DuckBillContainer.Get<IXSubtractionYLessThan10QuestionBuilder>()},
+                {"XaSubractionYWithNoBackButton", DuckBillContainer.Get<IXaSubractionYWithNoBackQuestionBuilder>()},
+                {"XaSubtractionX0Button", DuckBillContainer.Get<IXaSubtractionX0QuestionBuilder>()},
+                {"XaSubtractionY0Button", DuckBillContainer.Get<IXaSubtractionY0QuestionBuilder>()},
+                {"XaSubtractionYbWithNoBackButton", DuckBillContainer.Get<IXaSubtractionYbWithNoBackQuestionBuilder>()},
+                {"OneXSubtractionYWithBackButton", DuckBillContainer.Get<IOneXSubtractionYWithBackQuestionBuilder>()},
+                {"XaSubtractionYWithBackButton", DuckBillContainer.Get<IXaSubtractionYWithBackQuestionBuilder>()},
+                {"XaSubtractionYbWithBackButton", DuckBillContainer.Get<IXaSubtractionYbWithBackQuestionBuilder>()},
+                {"XSubtractionYLessThan100Button", DuckBillContainer.Get<IXSubtractionYLessThan100QuestionBuilder>()}
             };
 
 
@@ -128,7 +138,9 @@ namespace Howie_Math_Study
 
         private void PrintButton_Click(object sender, EventArgs e)
         {
-            var questions = this.GenerateQuestions();
+            var questions = this.plusLessThan100CheckBox.Checked
+                ? this.GenerateQuestionsWithPlusLessThen100()
+                : this.GenerateQuestions();
 
             var excelbook = this.GenerateWorkBook();
             this.worksheetBuilder.Build(questions, excelbook);
@@ -140,7 +152,9 @@ namespace Howie_Math_Study
 
         private void generateButton_Click(object sender, EventArgs e)
         {
-            var questions = this.GenerateQuestions();
+            var questions = this.plusLessThan100CheckBox.Checked
+                ? this.GenerateQuestionsWithPlusLessThen100()
+                : this.GenerateQuestions();
 
             var excelbook = this.GenerateWorkBook();
             var sheet = this.worksheetBuilder.Build(questions, excelbook);
@@ -169,7 +183,7 @@ namespace Howie_Math_Study
                 return questions;
             }
 
-            var pagesize = this.PageSizeControl.Text.ToDecimal();
+            var pagesize = this.PageSizeControl.Text.ToInt();
 
             if (pagesize == decimal.Zero)
             {
@@ -188,10 +202,63 @@ namespace Howie_Math_Study
 
             for (var page = 1; page <= pagecount; page++)
             {
-                var perTypeQuestionCount = Math.Ceiling(pagesize / questionTypes.Length.ToDecimal()).ToInt();
+                var perTypeQuestionCount =
+                    Math.Ceiling(pagesize.ToDecimal() / questionTypes.Length.ToDecimal()).ToInt();
 
                 questions.AddRange(questionTypes.SelectMany(type => type.Build(perTypeQuestionCount))
-                    .OrderBy(question => Guid.NewGuid()).Take(60));
+                    .OrderBy(question => Guid.NewGuid()).Take(pagesize));
+            }
+
+            return questions;
+        }
+
+        private List<string> GenerateQuestionsWithPlusLessThen100()
+        {
+            var questions = new List<string>();
+
+            var questionTypes = this.questionPanel.Controls.Cast<Control>()
+                .Where(control =>
+                    control is System.Windows.Forms.Button && Choice.Equals(control.Tag) &&
+                    this.questionBuilders.ContainsKey(control.Name))
+                .Select(control => this.questionBuilders[control.Name])
+                .ToArray();
+
+            if (questionTypes.Length == 0)
+            {
+                MessageBox.Show("没有选择任何题目");
+                return questions;
+            }
+
+            var pagesize = this.PageSizeControl.Text.ToInt();
+
+            if (pagesize == 0)
+            {
+                MessageBox.Show("每页数量为0");
+                return questions;
+            }
+
+            var pagecount = this.PageCountControl.SelectedItem.ToInt();
+
+            if (pagecount == 0)
+            {
+                MessageBox.Show("页数为0");
+                return questions;
+            }
+
+
+            for (var page = 1; page <= pagecount; page++)
+            {
+                var normalQuestionCount = Math.Ceiling(pagesize * .75).ToInt();
+                var plusLessThan100QuestionCount = pagesize - normalQuestionCount;
+
+                var perTypeQuestionCount =
+                    Math.Ceiling(normalQuestionCount.ToDecimal() / questionTypes.Length.ToDecimal()).ToInt();
+
+                questions.AddRange(questionTypes.SelectMany(type => type.Build(perTypeQuestionCount))
+                    .OrderBy(question => Guid.NewGuid()).Take(normalQuestionCount));
+
+                questions.AddRange(this.questionBuilders["XPlusYLessThen100Button"]
+                    .Build(plusLessThan100QuestionCount));
             }
 
             return questions;
