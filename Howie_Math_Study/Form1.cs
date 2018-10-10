@@ -57,7 +57,15 @@ namespace Howie_Math_Study
                 {"OneXSubtractionYWithBackButton", DuckBillContainer.Get<IOneXSubtractionYWithBackQuestionBuilder>()},
                 {"XaSubtractionYWithBackButton", DuckBillContainer.Get<IXaSubtractionYWithBackQuestionBuilder>()},
                 {"XaSubtractionYbWithBackButton", DuckBillContainer.Get<IXaSubtractionYbWithBackQuestionBuilder>()},
-                {"XSubtractionYLessThan100Button", DuckBillContainer.Get<IXSubtractionYLessThan100QuestionBuilder>()}
+                {"XSubtractionYLessThan100Button", DuckBillContainer.Get<IXSubtractionYLessThan100QuestionBuilder>()},
+                {"ElevenMixButton", DuckBillContainer.Get<IElevenMixQuestionBuilder>()},
+                {"TwelveMixButton", DuckBillContainer.Get<ITweleveQuestionBuilder>()},
+                {"ThirteenMixButton", DuckBillContainer.Get<IThirteenQuestionBuilder>()},
+                {"FourteenMixButton", DuckBillContainer.Get<IFourteenQuestionBuilder>()},
+                {"FifteenMixButton", DuckBillContainer.Get<IFifteenQuestionBuilder>()},
+                {"SixteenMixButton", DuckBillContainer.Get<ISixteenQuestionBuilder>()},
+                {"SeventeenMixButton", DuckBillContainer.Get<ISevenTeenQuestionBuilder>()},
+                {"EighteenMixButton", DuckBillContainer.Get<IEightteenQuestionBuilder>()}
             };
 
 

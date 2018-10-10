@@ -39,6 +39,14 @@
             this.FivePlusXButton = new System.Windows.Forms.Button();
             this.X0PlusY0Button = new System.Windows.Forms.Button();
             this.questionPanel = new System.Windows.Forms.Panel();
+            this.ElevenMixButton = new System.Windows.Forms.Button();
+            this.XSubtractionYLessThan100Button = new System.Windows.Forms.Button();
+            this.XaSubtractionYbWithBackButton = new System.Windows.Forms.Button();
+            this.XaSubtractionYWithBackButton = new System.Windows.Forms.Button();
+            this.OneXSubtractionYWithBackButton = new System.Windows.Forms.Button();
+            this.XaSubtractionY0Button = new System.Windows.Forms.Button();
+            this.XaSubtractionX0Button = new System.Windows.Forms.Button();
+            this.XSubtractionYLessThan10Button = new System.Windows.Forms.Button();
             this.XPlusYLessThen100Button = new System.Windows.Forms.Button();
             this.XaPlusYbCarryAndLessThen100Button = new System.Windows.Forms.Button();
             this.XaPlusYCarryButton = new System.Windows.Forms.Button();
@@ -55,14 +63,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.printButton = new System.Windows.Forms.Button();
             this.generateButton = new System.Windows.Forms.Button();
-            this.XSubtractionYLessThan10Button = new System.Windows.Forms.Button();
-            this.XaSubtractionX0Button = new System.Windows.Forms.Button();
-            this.XaSubtractionY0Button = new System.Windows.Forms.Button();
-            this.OneXSubtractionYWithBackButton = new System.Windows.Forms.Button();
-            this.XaSubtractionYWithBackButton = new System.Windows.Forms.Button();
-            this.XaSubtractionYbWithBackButton = new System.Windows.Forms.Button();
-            this.XSubtractionYLessThan100Button = new System.Windows.Forms.Button();
             this.plusLessThan100CheckBox = new System.Windows.Forms.CheckBox();
+            this.TwelveMixButton = new System.Windows.Forms.Button();
+            this.ThirteenMixButton = new System.Windows.Forms.Button();
+            this.FourteenMixButton = new System.Windows.Forms.Button();
+            this.FifteenMixButton = new System.Windows.Forms.Button();
+            this.SixteenMixButton = new System.Windows.Forms.Button();
+            this.SeventeenMixButton = new System.Windows.Forms.Button();
+            this.EighteenMixButton = new System.Windows.Forms.Button();
             this.questionPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -159,6 +167,14 @@
             // 
             // questionPanel
             // 
+            this.questionPanel.Controls.Add(this.EighteenMixButton);
+            this.questionPanel.Controls.Add(this.SeventeenMixButton);
+            this.questionPanel.Controls.Add(this.SixteenMixButton);
+            this.questionPanel.Controls.Add(this.FifteenMixButton);
+            this.questionPanel.Controls.Add(this.FourteenMixButton);
+            this.questionPanel.Controls.Add(this.ThirteenMixButton);
+            this.questionPanel.Controls.Add(this.TwelveMixButton);
+            this.questionPanel.Controls.Add(this.ElevenMixButton);
             this.questionPanel.Controls.Add(this.XSubtractionYLessThan100Button);
             this.questionPanel.Controls.Add(this.XaSubtractionYbWithBackButton);
             this.questionPanel.Controls.Add(this.XaSubtractionYWithBackButton);
@@ -188,8 +204,80 @@
             this.questionPanel.Controls.Add(this.SixPlusXButton);
             this.questionPanel.Location = new System.Drawing.Point(12, 65);
             this.questionPanel.Name = "questionPanel";
-            this.questionPanel.Size = new System.Drawing.Size(737, 386);
+            this.questionPanel.Size = new System.Drawing.Size(737, 486);
             this.questionPanel.TabIndex = 13;
+            // 
+            // ElevenMixButton
+            // 
+            this.ElevenMixButton.Location = new System.Drawing.Point(14, 388);
+            this.ElevenMixButton.Name = "ElevenMixButton";
+            this.ElevenMixButton.Size = new System.Drawing.Size(108, 31);
+            this.ElevenMixButton.TabIndex = 30;
+            this.ElevenMixButton.Text = "11混合运算";
+            this.ElevenMixButton.UseVisualStyleBackColor = true;
+            // 
+            // XSubtractionYLessThan100Button
+            // 
+            this.XSubtractionYLessThan100Button.Location = new System.Drawing.Point(374, 334);
+            this.XSubtractionYLessThan100Button.Name = "XSubtractionYLessThan100Button";
+            this.XSubtractionYLessThan100Button.Size = new System.Drawing.Size(108, 31);
+            this.XSubtractionYLessThan100Button.TabIndex = 29;
+            this.XSubtractionYLessThan100Button.Text = "100以内减法";
+            this.XSubtractionYLessThan100Button.UseVisualStyleBackColor = true;
+            // 
+            // XaSubtractionYbWithBackButton
+            // 
+            this.XaSubtractionYbWithBackButton.Location = new System.Drawing.Point(254, 334);
+            this.XaSubtractionYbWithBackButton.Name = "XaSubtractionYbWithBackButton";
+            this.XaSubtractionYbWithBackButton.Size = new System.Drawing.Size(108, 31);
+            this.XaSubtractionYbWithBackButton.TabIndex = 28;
+            this.XaSubtractionYbWithBackButton.Text = "XA-YB退位减法";
+            this.XaSubtractionYbWithBackButton.UseVisualStyleBackColor = true;
+            // 
+            // XaSubtractionYWithBackButton
+            // 
+            this.XaSubtractionYWithBackButton.Location = new System.Drawing.Point(134, 334);
+            this.XaSubtractionYWithBackButton.Name = "XaSubtractionYWithBackButton";
+            this.XaSubtractionYWithBackButton.Size = new System.Drawing.Size(108, 31);
+            this.XaSubtractionYWithBackButton.TabIndex = 27;
+            this.XaSubtractionYWithBackButton.Text = "XA-Y退位减法";
+            this.XaSubtractionYWithBackButton.UseVisualStyleBackColor = true;
+            // 
+            // OneXSubtractionYWithBackButton
+            // 
+            this.OneXSubtractionYWithBackButton.Location = new System.Drawing.Point(14, 334);
+            this.OneXSubtractionYWithBackButton.Name = "OneXSubtractionYWithBackButton";
+            this.OneXSubtractionYWithBackButton.Size = new System.Drawing.Size(108, 31);
+            this.OneXSubtractionYWithBackButton.TabIndex = 26;
+            this.OneXSubtractionYWithBackButton.Text = "1X-Y退位减法";
+            this.OneXSubtractionYWithBackButton.UseVisualStyleBackColor = true;
+            // 
+            // XaSubtractionY0Button
+            // 
+            this.XaSubtractionY0Button.Location = new System.Drawing.Point(374, 285);
+            this.XaSubtractionY0Button.Name = "XaSubtractionY0Button";
+            this.XaSubtractionY0Button.Size = new System.Drawing.Size(108, 31);
+            this.XaSubtractionY0Button.TabIndex = 25;
+            this.XaSubtractionY0Button.Text = "XA-Y0减法";
+            this.XaSubtractionY0Button.UseVisualStyleBackColor = true;
+            // 
+            // XaSubtractionX0Button
+            // 
+            this.XaSubtractionX0Button.Location = new System.Drawing.Point(254, 285);
+            this.XaSubtractionX0Button.Name = "XaSubtractionX0Button";
+            this.XaSubtractionX0Button.Size = new System.Drawing.Size(108, 31);
+            this.XaSubtractionX0Button.TabIndex = 24;
+            this.XaSubtractionX0Button.Text = "XA-X0减法";
+            this.XaSubtractionX0Button.UseVisualStyleBackColor = true;
+            // 
+            // XSubtractionYLessThan10Button
+            // 
+            this.XSubtractionYLessThan10Button.Location = new System.Drawing.Point(14, 285);
+            this.XSubtractionYLessThan10Button.Name = "XSubtractionYLessThan10Button";
+            this.XSubtractionYLessThan10Button.Size = new System.Drawing.Size(108, 31);
+            this.XSubtractionYLessThan10Button.TabIndex = 23;
+            this.XSubtractionYLessThan10Button.Text = "10以内减法";
+            this.XSubtractionYLessThan10Button.UseVisualStyleBackColor = true;
             // 
             // XPlusYLessThen100Button
             // 
@@ -350,69 +438,6 @@
             this.generateButton.UseVisualStyleBackColor = true;
             this.generateButton.Click += new System.EventHandler(this.generateButton_Click);
             // 
-            // XSubtractionYLessThan10Button
-            // 
-            this.XSubtractionYLessThan10Button.Location = new System.Drawing.Point(14, 285);
-            this.XSubtractionYLessThan10Button.Name = "XSubtractionYLessThan10Button";
-            this.XSubtractionYLessThan10Button.Size = new System.Drawing.Size(108, 31);
-            this.XSubtractionYLessThan10Button.TabIndex = 23;
-            this.XSubtractionYLessThan10Button.Text = "10以内减法";
-            this.XSubtractionYLessThan10Button.UseVisualStyleBackColor = true;
-            // 
-            // XaSubtractionX0Button
-            // 
-            this.XaSubtractionX0Button.Location = new System.Drawing.Point(254, 285);
-            this.XaSubtractionX0Button.Name = "XaSubtractionX0Button";
-            this.XaSubtractionX0Button.Size = new System.Drawing.Size(108, 31);
-            this.XaSubtractionX0Button.TabIndex = 24;
-            this.XaSubtractionX0Button.Text = "XA-X0减法";
-            this.XaSubtractionX0Button.UseVisualStyleBackColor = true;
-            // 
-            // XaSubtractionY0Button
-            // 
-            this.XaSubtractionY0Button.Location = new System.Drawing.Point(374, 285);
-            this.XaSubtractionY0Button.Name = "XaSubtractionY0Button";
-            this.XaSubtractionY0Button.Size = new System.Drawing.Size(108, 31);
-            this.XaSubtractionY0Button.TabIndex = 25;
-            this.XaSubtractionY0Button.Text = "XA-Y0减法";
-            this.XaSubtractionY0Button.UseVisualStyleBackColor = true;
-            // 
-            // OneXSubtractionYWithBackButton
-            // 
-            this.OneXSubtractionYWithBackButton.Location = new System.Drawing.Point(14, 334);
-            this.OneXSubtractionYWithBackButton.Name = "OneXSubtractionYWithBackButton";
-            this.OneXSubtractionYWithBackButton.Size = new System.Drawing.Size(108, 31);
-            this.OneXSubtractionYWithBackButton.TabIndex = 26;
-            this.OneXSubtractionYWithBackButton.Text = "1X-Y退位减法";
-            this.OneXSubtractionYWithBackButton.UseVisualStyleBackColor = true;
-            // 
-            // XaSubtractionYWithBackButton
-            // 
-            this.XaSubtractionYWithBackButton.Location = new System.Drawing.Point(134, 334);
-            this.XaSubtractionYWithBackButton.Name = "XaSubtractionYWithBackButton";
-            this.XaSubtractionYWithBackButton.Size = new System.Drawing.Size(108, 31);
-            this.XaSubtractionYWithBackButton.TabIndex = 27;
-            this.XaSubtractionYWithBackButton.Text = "XA-Y退位减法";
-            this.XaSubtractionYWithBackButton.UseVisualStyleBackColor = true;
-            // 
-            // XaSubtractionYbWithBackButton
-            // 
-            this.XaSubtractionYbWithBackButton.Location = new System.Drawing.Point(254, 334);
-            this.XaSubtractionYbWithBackButton.Name = "XaSubtractionYbWithBackButton";
-            this.XaSubtractionYbWithBackButton.Size = new System.Drawing.Size(108, 31);
-            this.XaSubtractionYbWithBackButton.TabIndex = 28;
-            this.XaSubtractionYbWithBackButton.Text = "XA-YB退位减法";
-            this.XaSubtractionYbWithBackButton.UseVisualStyleBackColor = true;
-            // 
-            // XSubtractionYLessThan100Button
-            // 
-            this.XSubtractionYLessThan100Button.Location = new System.Drawing.Point(374, 334);
-            this.XSubtractionYLessThan100Button.Name = "XSubtractionYLessThan100Button";
-            this.XSubtractionYLessThan100Button.Size = new System.Drawing.Size(108, 31);
-            this.XSubtractionYLessThan100Button.TabIndex = 29;
-            this.XSubtractionYLessThan100Button.Text = "100以内减法";
-            this.XSubtractionYLessThan100Button.UseVisualStyleBackColor = true;
-            // 
             // plusLessThan100CheckBox
             // 
             this.plusLessThan100CheckBox.AutoSize = true;
@@ -423,11 +448,74 @@
             this.plusLessThan100CheckBox.Text = "附加100以内加法";
             this.plusLessThan100CheckBox.UseVisualStyleBackColor = true;
             // 
+            // TwelveMixButton
+            // 
+            this.TwelveMixButton.Location = new System.Drawing.Point(134, 388);
+            this.TwelveMixButton.Name = "TwelveMixButton";
+            this.TwelveMixButton.Size = new System.Drawing.Size(108, 31);
+            this.TwelveMixButton.TabIndex = 31;
+            this.TwelveMixButton.Text = "12混合运算";
+            this.TwelveMixButton.UseVisualStyleBackColor = true;
+            // 
+            // ThirteenMixButton
+            // 
+            this.ThirteenMixButton.Location = new System.Drawing.Point(254, 388);
+            this.ThirteenMixButton.Name = "ThirteenMixButton";
+            this.ThirteenMixButton.Size = new System.Drawing.Size(108, 31);
+            this.ThirteenMixButton.TabIndex = 32;
+            this.ThirteenMixButton.Text = "13混合运算";
+            this.ThirteenMixButton.UseVisualStyleBackColor = true;
+            // 
+            // FourteenMixButton
+            // 
+            this.FourteenMixButton.Location = new System.Drawing.Point(374, 388);
+            this.FourteenMixButton.Name = "FourteenMixButton";
+            this.FourteenMixButton.Size = new System.Drawing.Size(108, 31);
+            this.FourteenMixButton.TabIndex = 33;
+            this.FourteenMixButton.Text = "14混合运算";
+            this.FourteenMixButton.UseVisualStyleBackColor = true;
+            // 
+            // FifteenMixButton
+            // 
+            this.FifteenMixButton.Location = new System.Drawing.Point(494, 388);
+            this.FifteenMixButton.Name = "FifteenMixButton";
+            this.FifteenMixButton.Size = new System.Drawing.Size(108, 31);
+            this.FifteenMixButton.TabIndex = 34;
+            this.FifteenMixButton.Text = "15混合运算";
+            this.FifteenMixButton.UseVisualStyleBackColor = true;
+            // 
+            // SixteenMixButton
+            // 
+            this.SixteenMixButton.Location = new System.Drawing.Point(614, 388);
+            this.SixteenMixButton.Name = "SixteenMixButton";
+            this.SixteenMixButton.Size = new System.Drawing.Size(108, 31);
+            this.SixteenMixButton.TabIndex = 35;
+            this.SixteenMixButton.Text = "16混合运算";
+            this.SixteenMixButton.UseVisualStyleBackColor = true;
+            // 
+            // SeventeenMixButton
+            // 
+            this.SeventeenMixButton.Location = new System.Drawing.Point(14, 443);
+            this.SeventeenMixButton.Name = "SeventeenMixButton";
+            this.SeventeenMixButton.Size = new System.Drawing.Size(108, 31);
+            this.SeventeenMixButton.TabIndex = 36;
+            this.SeventeenMixButton.Text = "17混合运算";
+            this.SeventeenMixButton.UseVisualStyleBackColor = true;
+            // 
+            // EighteenMixButton
+            // 
+            this.EighteenMixButton.Location = new System.Drawing.Point(134, 443);
+            this.EighteenMixButton.Name = "EighteenMixButton";
+            this.EighteenMixButton.Size = new System.Drawing.Size(108, 31);
+            this.EighteenMixButton.TabIndex = 37;
+            this.EighteenMixButton.Text = "18混合运算";
+            this.EighteenMixButton.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(761, 463);
+            this.ClientSize = new System.Drawing.Size(761, 596);
             this.Controls.Add(this.plusLessThan100CheckBox);
             this.Controls.Add(this.generateButton);
             this.Controls.Add(this.printButton);
@@ -481,6 +569,14 @@
         private System.Windows.Forms.Button XaSubtractionYbWithBackButton;
         private System.Windows.Forms.Button XaSubtractionYWithBackButton;
         private System.Windows.Forms.CheckBox plusLessThan100CheckBox;
+        private System.Windows.Forms.Button ElevenMixButton;
+        private System.Windows.Forms.Button EighteenMixButton;
+        private System.Windows.Forms.Button SeventeenMixButton;
+        private System.Windows.Forms.Button SixteenMixButton;
+        private System.Windows.Forms.Button FifteenMixButton;
+        private System.Windows.Forms.Button FourteenMixButton;
+        private System.Windows.Forms.Button ThirteenMixButton;
+        private System.Windows.Forms.Button TwelveMixButton;
     }
 }
 
