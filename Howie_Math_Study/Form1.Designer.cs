@@ -39,6 +39,13 @@
             this.FivePlusXButton = new System.Windows.Forms.Button();
             this.X0PlusY0Button = new System.Windows.Forms.Button();
             this.questionPanel = new System.Windows.Forms.Panel();
+            this.EighteenMixButton = new System.Windows.Forms.Button();
+            this.SeventeenMixButton = new System.Windows.Forms.Button();
+            this.SixteenMixButton = new System.Windows.Forms.Button();
+            this.FifteenMixButton = new System.Windows.Forms.Button();
+            this.FourteenMixButton = new System.Windows.Forms.Button();
+            this.ThirteenMixButton = new System.Windows.Forms.Button();
+            this.TwelveMixButton = new System.Windows.Forms.Button();
             this.ElevenMixButton = new System.Windows.Forms.Button();
             this.XSubtractionYLessThan100Button = new System.Windows.Forms.Button();
             this.XaSubtractionYbWithBackButton = new System.Windows.Forms.Button();
@@ -64,13 +71,7 @@
             this.printButton = new System.Windows.Forms.Button();
             this.generateButton = new System.Windows.Forms.Button();
             this.plusLessThan100CheckBox = new System.Windows.Forms.CheckBox();
-            this.TwelveMixButton = new System.Windows.Forms.Button();
-            this.ThirteenMixButton = new System.Windows.Forms.Button();
-            this.FourteenMixButton = new System.Windows.Forms.Button();
-            this.FifteenMixButton = new System.Windows.Forms.Button();
-            this.SixteenMixButton = new System.Windows.Forms.Button();
-            this.SeventeenMixButton = new System.Windows.Forms.Button();
-            this.EighteenMixButton = new System.Windows.Forms.Button();
+            this.Include20CarryOverMixButton = new System.Windows.Forms.Button();
             this.questionPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -167,6 +168,7 @@
             // 
             // questionPanel
             // 
+            this.questionPanel.Controls.Add(this.Include20CarryOverMixButton);
             this.questionPanel.Controls.Add(this.EighteenMixButton);
             this.questionPanel.Controls.Add(this.SeventeenMixButton);
             this.questionPanel.Controls.Add(this.SixteenMixButton);
@@ -206,6 +208,69 @@
             this.questionPanel.Name = "questionPanel";
             this.questionPanel.Size = new System.Drawing.Size(737, 486);
             this.questionPanel.TabIndex = 13;
+            // 
+            // EighteenMixButton
+            // 
+            this.EighteenMixButton.Location = new System.Drawing.Point(134, 443);
+            this.EighteenMixButton.Name = "EighteenMixButton";
+            this.EighteenMixButton.Size = new System.Drawing.Size(108, 31);
+            this.EighteenMixButton.TabIndex = 37;
+            this.EighteenMixButton.Text = "18混合运算";
+            this.EighteenMixButton.UseVisualStyleBackColor = true;
+            // 
+            // SeventeenMixButton
+            // 
+            this.SeventeenMixButton.Location = new System.Drawing.Point(14, 443);
+            this.SeventeenMixButton.Name = "SeventeenMixButton";
+            this.SeventeenMixButton.Size = new System.Drawing.Size(108, 31);
+            this.SeventeenMixButton.TabIndex = 36;
+            this.SeventeenMixButton.Text = "17混合运算";
+            this.SeventeenMixButton.UseVisualStyleBackColor = true;
+            // 
+            // SixteenMixButton
+            // 
+            this.SixteenMixButton.Location = new System.Drawing.Point(614, 388);
+            this.SixteenMixButton.Name = "SixteenMixButton";
+            this.SixteenMixButton.Size = new System.Drawing.Size(108, 31);
+            this.SixteenMixButton.TabIndex = 35;
+            this.SixteenMixButton.Text = "16混合运算";
+            this.SixteenMixButton.UseVisualStyleBackColor = true;
+            // 
+            // FifteenMixButton
+            // 
+            this.FifteenMixButton.Location = new System.Drawing.Point(494, 388);
+            this.FifteenMixButton.Name = "FifteenMixButton";
+            this.FifteenMixButton.Size = new System.Drawing.Size(108, 31);
+            this.FifteenMixButton.TabIndex = 34;
+            this.FifteenMixButton.Text = "15混合运算";
+            this.FifteenMixButton.UseVisualStyleBackColor = true;
+            // 
+            // FourteenMixButton
+            // 
+            this.FourteenMixButton.Location = new System.Drawing.Point(374, 388);
+            this.FourteenMixButton.Name = "FourteenMixButton";
+            this.FourteenMixButton.Size = new System.Drawing.Size(108, 31);
+            this.FourteenMixButton.TabIndex = 33;
+            this.FourteenMixButton.Text = "14混合运算";
+            this.FourteenMixButton.UseVisualStyleBackColor = true;
+            // 
+            // ThirteenMixButton
+            // 
+            this.ThirteenMixButton.Location = new System.Drawing.Point(254, 388);
+            this.ThirteenMixButton.Name = "ThirteenMixButton";
+            this.ThirteenMixButton.Size = new System.Drawing.Size(108, 31);
+            this.ThirteenMixButton.TabIndex = 32;
+            this.ThirteenMixButton.Text = "13混合运算";
+            this.ThirteenMixButton.UseVisualStyleBackColor = true;
+            // 
+            // TwelveMixButton
+            // 
+            this.TwelveMixButton.Location = new System.Drawing.Point(134, 388);
+            this.TwelveMixButton.Name = "TwelveMixButton";
+            this.TwelveMixButton.Size = new System.Drawing.Size(108, 31);
+            this.TwelveMixButton.TabIndex = 31;
+            this.TwelveMixButton.Text = "12混合运算";
+            this.TwelveMixButton.UseVisualStyleBackColor = true;
             // 
             // ElevenMixButton
             // 
@@ -448,68 +513,14 @@
             this.plusLessThan100CheckBox.Text = "附加100以内加法";
             this.plusLessThan100CheckBox.UseVisualStyleBackColor = true;
             // 
-            // TwelveMixButton
+            // Include20CarryOverMixButton
             // 
-            this.TwelveMixButton.Location = new System.Drawing.Point(134, 388);
-            this.TwelveMixButton.Name = "TwelveMixButton";
-            this.TwelveMixButton.Size = new System.Drawing.Size(108, 31);
-            this.TwelveMixButton.TabIndex = 31;
-            this.TwelveMixButton.Text = "12混合运算";
-            this.TwelveMixButton.UseVisualStyleBackColor = true;
-            // 
-            // ThirteenMixButton
-            // 
-            this.ThirteenMixButton.Location = new System.Drawing.Point(254, 388);
-            this.ThirteenMixButton.Name = "ThirteenMixButton";
-            this.ThirteenMixButton.Size = new System.Drawing.Size(108, 31);
-            this.ThirteenMixButton.TabIndex = 32;
-            this.ThirteenMixButton.Text = "13混合运算";
-            this.ThirteenMixButton.UseVisualStyleBackColor = true;
-            // 
-            // FourteenMixButton
-            // 
-            this.FourteenMixButton.Location = new System.Drawing.Point(374, 388);
-            this.FourteenMixButton.Name = "FourteenMixButton";
-            this.FourteenMixButton.Size = new System.Drawing.Size(108, 31);
-            this.FourteenMixButton.TabIndex = 33;
-            this.FourteenMixButton.Text = "14混合运算";
-            this.FourteenMixButton.UseVisualStyleBackColor = true;
-            // 
-            // FifteenMixButton
-            // 
-            this.FifteenMixButton.Location = new System.Drawing.Point(494, 388);
-            this.FifteenMixButton.Name = "FifteenMixButton";
-            this.FifteenMixButton.Size = new System.Drawing.Size(108, 31);
-            this.FifteenMixButton.TabIndex = 34;
-            this.FifteenMixButton.Text = "15混合运算";
-            this.FifteenMixButton.UseVisualStyleBackColor = true;
-            // 
-            // SixteenMixButton
-            // 
-            this.SixteenMixButton.Location = new System.Drawing.Point(614, 388);
-            this.SixteenMixButton.Name = "SixteenMixButton";
-            this.SixteenMixButton.Size = new System.Drawing.Size(108, 31);
-            this.SixteenMixButton.TabIndex = 35;
-            this.SixteenMixButton.Text = "16混合运算";
-            this.SixteenMixButton.UseVisualStyleBackColor = true;
-            // 
-            // SeventeenMixButton
-            // 
-            this.SeventeenMixButton.Location = new System.Drawing.Point(14, 443);
-            this.SeventeenMixButton.Name = "SeventeenMixButton";
-            this.SeventeenMixButton.Size = new System.Drawing.Size(108, 31);
-            this.SeventeenMixButton.TabIndex = 36;
-            this.SeventeenMixButton.Text = "17混合运算";
-            this.SeventeenMixButton.UseVisualStyleBackColor = true;
-            // 
-            // EighteenMixButton
-            // 
-            this.EighteenMixButton.Location = new System.Drawing.Point(134, 443);
-            this.EighteenMixButton.Name = "EighteenMixButton";
-            this.EighteenMixButton.Size = new System.Drawing.Size(108, 31);
-            this.EighteenMixButton.TabIndex = 37;
-            this.EighteenMixButton.Text = "18混合运算";
-            this.EighteenMixButton.UseVisualStyleBackColor = true;
+            this.Include20CarryOverMixButton.Location = new System.Drawing.Point(254, 443);
+            this.Include20CarryOverMixButton.Name = "Include20CarryOverMixButton";
+            this.Include20CarryOverMixButton.Size = new System.Drawing.Size(141, 31);
+            this.Include20CarryOverMixButton.TabIndex = 38;
+            this.Include20CarryOverMixButton.Text = "20以内进退位加减";
+            this.Include20CarryOverMixButton.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -577,6 +588,7 @@
         private System.Windows.Forms.Button FourteenMixButton;
         private System.Windows.Forms.Button ThirteenMixButton;
         private System.Windows.Forms.Button TwelveMixButton;
+        private System.Windows.Forms.Button Include20CarryOverMixButton;
     }
 }
 

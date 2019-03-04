@@ -1,4 +1,6 @@
-﻿namespace Howie_Math_Study.questions
+﻿using System.Collections.Generic;
+
+namespace Howie_Math_Study.questions
 {
     public interface IQuestionsBuilder
     {

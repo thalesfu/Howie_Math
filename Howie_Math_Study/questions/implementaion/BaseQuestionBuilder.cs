@@ -1,4 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Ctrip.Duckbill.Collections.Extensions;
 using Howie_Math_Study.utility;
 
 namespace Howie_Math_Study.questions.implementaion
@@ -14,10 +17,53 @@ namespace Howie_Math_Study.questions.implementaion
 
         public string[] Build(int count)
         {
-            return (new string[count]).Select(i => this.Build()).ToArray();
+            var questionsGroup = new List<List<string>>();
+
+            while (questionsGroup.Select(group => group.Count).Sum() < count)
+            {
+                var question = this.Build();
+
+                if (questionsGroup.IsNullOrEmpty())
+                {
+                    var newGroup = new List<string>();
+                    newGroup.Add(question);
+                    questionsGroup.Add(newGroup);
+                }
+                else
+                {
+                    var groupCount = questionsGroup.Count;
+
+                    for (int i = 0; i < groupCount; i++)
+                    {
+                        if (!questionsGroup[i].Contains(question))
+                        {
+                            questionsGroup[i].Add(question);
+
+                            if (i < questionsGroup.Count - 1)
+                            {
+                                questionsGroup = questionsGroup.Take(i + 1).ToList();
+                            }
+
+                            break;
+                        }
+                        else
+                        {
+                            if (i == questionsGroup.Count - 1)
+                            {
+                                var newGroup = new List<string>();
+                                newGroup.Add(question);
+                                questionsGroup.Add(newGroup);
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            return questionsGroup.SelectMany(group => group).ToArray();
         }
 
-        public string Build()
+        public virtual string Build()
         {
             int a;
             int b;

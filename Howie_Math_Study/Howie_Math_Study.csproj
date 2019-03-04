@@ -63,10 +63,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="questions\IInclude20AddAndSubtractionCarryOverMixQuestionBuilder.cs" />
     <Compile Include="questions\implementaion\EightteenQuestionBuilder.cs" />
     <Compile Include="questions\implementaion\FifteenQuestionBuilder.cs" />
     <Compile Include="questions\implementaion\FourteenQuestionBuilder.cs" />
     <Compile Include="questions\IEightteenQuestionBuilder.cs" />
+    <Compile Include="questions\implementaion\Include20AddAndSubtractionCarryOverMixQuestionBuilder.cs" />
     <Compile Include="questions\ISevenTeenQuestionBuilder.cs" />
     <Compile Include="questions\ISixteenQuestionBuilder.cs" />
     <Compile Include="questions\IFifteenQuestionBuilder.cs" />

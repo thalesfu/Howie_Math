@@ -65,7 +65,8 @@ namespace Howie_Math_Study
                 {"FifteenMixButton", DuckBillContainer.Get<IFifteenQuestionBuilder>()},
                 {"SixteenMixButton", DuckBillContainer.Get<ISixteenQuestionBuilder>()},
                 {"SeventeenMixButton", DuckBillContainer.Get<ISevenTeenQuestionBuilder>()},
-                {"EighteenMixButton", DuckBillContainer.Get<IEightteenQuestionBuilder>()}
+                {"EighteenMixButton", DuckBillContainer.Get<IEightteenQuestionBuilder>()},
+                {"Include20CarryOverMixButton", DuckBillContainer.Get<IInclude20AddAndSubtractionCarryOverMixQuestionBuilder>()}
             };
 
 
